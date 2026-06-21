@@ -28,7 +28,7 @@ const EMAIL_CONFIG = {
     emailjs_template_id: "YOUR_EMAILJS_TEMPLATE_ID_HERE"
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeDronaChatbot() {
     // 1. Inject Chatbot HTML Markup
     injectChatbotHTML();
 
@@ -50,7 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBarFill = document.getElementById("progressBarFill");
 
     // State
-    let currentUser = localStorage.getItem("drona_username") || "";
+    let currentUser = "";
+    try {
+        currentUser = localStorage.getItem("drona_username") || "";
+    } catch (e) {
+        console.warn("localStorage read failed, using session-only state:", e);
+    }
     let activeRoutine = null;
     let selectedDayIndex = 0;
 
@@ -183,10 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Functions & Implementations
 
     function injectChatbotHTML() {
-        // Create launcher wrapper for Safari 3D stacking context
-        const launcherWrapper = document.createElement("div");
-        launcherWrapper.className = "drona-chat-launcher-wrapper";
-
         // Create launcher button (native button element for iOS accessibility & click triggers)
         const launcherBtn = document.createElement("button");
         launcherBtn.type = "button";
@@ -198,12 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <i class="fas fa-robot"></i>
             <span class="pulse-ring"></span>
         `;
-        launcherWrapper.appendChild(launcherBtn);
-        document.body.appendChild(launcherWrapper);
-
-        // Create Chat Window wrapper for Safari 3D stacking context
-        const windowWrapper = document.createElement("div");
-        windowWrapper.className = "drona-chat-window-wrapper";
+        document.body.appendChild(launcherBtn);
 
         // Create Chat Window
         const windowDiv = document.createElement("div");
@@ -278,8 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button type="button" id="dronaSendBtn" aria-label="Send Message"><i class="fas fa-paper-plane"></i></button>
             </div>
         `;
-        windowWrapper.appendChild(windowDiv);
-        document.body.appendChild(windowWrapper);
+        document.body.appendChild(windowDiv);
     }
 
     function addMessage(sender, text, type = "text") {
@@ -341,7 +336,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 if (data.status === "success") {
                     currentUser = data.user.id;
-                    localStorage.setItem("drona_username", currentUser);
+                    try {
+                        localStorage.setItem("drona_username", currentUser);
+                    } catch (e) {
+                        console.warn("localStorage setItem failed:", e);
+                    }
                     loadChatPanel();
                 } else {
                     alert("Error: " + data.error);
@@ -350,7 +349,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => {
                 console.error("Backend offline. Logging in locally:", err);
                 currentUser = usernameInput.toLowerCase().replace(/[^a-z0-9_]/g, "");
-                localStorage.setItem("drona_username", currentUser);
+                try {
+                    localStorage.setItem("drona_username", currentUser);
+                } catch (e) {
+                    console.warn("localStorage setItem failed:", e);
+                }
                 loadChatPanel();
             });
         });
@@ -1039,4 +1042,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         renderAuthPanel();
     }
-});
+}
+
+// Bulletproof initialization that handles race conditions in mobile browsers
+// where DOMContentLoaded might have already fired.
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeDronaChatbot);
+} else {
+    initializeDronaChatbot();
+}
