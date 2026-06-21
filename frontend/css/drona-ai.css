@@ -100,6 +100,7 @@
     overflow: hidden;
     font-family: var(--drona-font);
     opacity: 0;
+    visibility: hidden;
     transform: translateY(20px) scale(0.95);
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -107,6 +108,7 @@
 
 .drona-chat-window.active {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0) scale(1);
     pointer-events: auto;
 }
@@ -245,6 +247,7 @@
     transform: translateX(15px);
     transition: all 0.3s ease;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 16px;
 }
 
@@ -318,6 +321,7 @@
 .drona-messages {
     flex: 1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -579,6 +583,7 @@
     display: flex;
     gap: 6px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
     margin-bottom: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);

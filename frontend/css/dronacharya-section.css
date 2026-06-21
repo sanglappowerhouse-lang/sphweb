@@ -851,10 +851,31 @@
 
     .training-title {
         font-size: 1.8rem;
+        text-align: center !important;
     }
 
+    .training-subtitle {
+        text-align: center !important;
+    }
+
+    .owner-bio-card,
+    .booking-card,
     .exclusive-training-container {
-        padding: 2rem;
+        padding: 1.5rem 1rem !important;
+    }
+
+    .bio-text {
+        text-align: center !important;
+    }
+
+    .booking-submit-btn,
+    .whatsapp-btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .booking-section {
