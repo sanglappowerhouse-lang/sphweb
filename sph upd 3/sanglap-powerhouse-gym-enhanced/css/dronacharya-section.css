@@ -12,6 +12,10 @@
     position: relative;
     overflow: hidden;
     padding: 6rem 0 !important;
+    /* Explicit display ensures Chrome/Android doesn't collapse section */
+    display: block;
+    width: 100%;
+    min-height: 1px;
 }
 
 /* Premium Background Elements */

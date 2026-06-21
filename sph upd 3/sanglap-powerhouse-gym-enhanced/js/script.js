@@ -85,25 +85,35 @@ window.addEventListener('scroll', () => {
 // ============================================
 
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.animation = 'fadeInDown 0.8s ease-out forwards';
+            entry.target.classList.add('section-visible');
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe sections for animation
+// Observe sections for animation — use class-based approach instead of
+// inline opacity:0, which caused Chrome/Android to permanently hide
+// sections when the observer threshold wasn't met on tall layouts.
 document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
+    section.classList.add('section-hidden');
     observer.observe(section);
 });
+
+// Failsafe: Force all sections visible after 2.5s in case
+// IntersectionObserver fails (common on some Android Chrome versions
+// with unusual viewport/scroll configurations)
+setTimeout(() => {
+    document.querySelectorAll('section.section-hidden').forEach(section => {
+        section.classList.add('section-visible');
+    });
+}, 2500);
 
 // ============================================
 // 3D INTERACTIVE TILT & GLOW EFFECTS

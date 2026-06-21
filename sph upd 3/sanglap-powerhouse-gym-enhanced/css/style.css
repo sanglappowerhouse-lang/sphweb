@@ -435,6 +435,10 @@ section {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
+    /* Explicit display + min-height prevents Chrome/Android from
+       collapsing sections when opacity:0 is applied by observer */
+    display: block;
+    min-height: 1px;
 }
 
 section::before {
@@ -1437,6 +1441,24 @@ footer {
     100% {
         left: 100%;
     }
+}
+
+/* ============================================
+   SECTION VISIBILITY ANIMATION CLASSES
+   Class-based approach to prevent Chrome/Android
+   from permanently hiding sections when inline
+   opacity:0 gets stuck.
+   ============================================ */
+
+section.section-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.section-hidden.section-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ============================================
