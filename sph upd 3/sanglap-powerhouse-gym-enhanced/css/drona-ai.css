@@ -20,13 +20,23 @@
     --drona-font: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Chat Launcher Button */
-.drona-chat-launcher {
+/* Chat Launcher Wrapper (Safari iOS 3D Stacking Context Fix) */
+.drona-chat-launcher-wrapper {
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 60px;
     height: 60px;
+    z-index: 10001;
+    -webkit-transform: translate3d(0, 0, 99999px) !important;
+    transform: translate3d(0, 0, 99999px) !important;
+    pointer-events: none; /* Ignore clicks on wrapper margins */
+}
+
+/* Chat Launcher Button */
+.drona-chat-launcher {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--drona-navy), var(--drona-dark));
     border: 2px solid var(--drona-neon);
@@ -37,7 +47,6 @@
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
-    z-index: 10001;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     /* Safari iOS fixes: ensure touch interactivity */
     -webkit-tap-highlight-color: rgba(0, 255, 136, 0.3);
@@ -46,6 +55,9 @@
     -webkit-touch-callout: none;
     user-select: none;
     -webkit-user-select: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
 }
 
 .drona-chat-launcher.drona-launcher-hidden {
@@ -88,20 +100,29 @@
     }
 }
 
-/* Chat Window Container */
-.drona-chat-window {
+/* Chat Window Wrapper (Safari iOS 3D Stacking Context Fix) */
+.drona-chat-window-wrapper {
     position: fixed;
     bottom: 100px;
     right: 30px;
     width: 380px;
     height: 580px;
+    z-index: 10002;
+    -webkit-transform: translate3d(0, 0, 100000px) !important;
+    transform: translate3d(0, 0, 100000px) !important;
+    pointer-events: none; /* Ignore clicks outside the window bounds */
+}
+
+/* Chat Window Container */
+.drona-chat-window {
+    width: 100%;
+    height: 100%;
     border-radius: 16px;
     background: var(--drona-glass);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--drona-border);
     box-shadow: 0 10px 30px rgba(7, 13, 25, 0.5), 0 0 15px rgba(0, 255, 136, 0.05);
-    z-index: 10002;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -820,16 +841,19 @@
 
 /* Responsive Styles */
 @media screen and (max-width: 480px) {
-    .drona-chat-window {
+    .drona-chat-window-wrapper {
         bottom: 0;
         right: 0;
         width: 100%;
         height: 100%;
+    }
+    
+    .drona-chat-window {
         border-radius: 0;
         border: none;
     }
     
-    .drona-chat-launcher {
+    .drona-chat-launcher-wrapper {
         bottom: 15px;
         right: 15px;
     }

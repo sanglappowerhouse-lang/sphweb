@@ -55,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedDayIndex = 0;
 
     // 3. Setup Open/Close Event Listeners
-    // Handler function extracted so it can be shared by click + touchstart
     function handleLauncherActivation(e) {
-        e.preventDefault();
         e.stopPropagation();
         chatWindow.classList.toggle("active");
         if (chatWindow.classList.contains("active")) {
@@ -75,10 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Use both click and touchend for cross-browser compatibility.
-    // touchend (not touchstart) prevents double-firing on most devices.
     launcher.addEventListener("click", handleLauncherActivation);
-    launcher.addEventListener("touchend", handleLauncherActivation);
 
     closeBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -188,22 +183,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Functions & Implementations
 
     function injectChatbotHTML() {
-        // Create launcher — use role=button + tabindex for Safari iOS
-        // Safari doesn't fire click events on non-interactive elements (divs)
-        const launcherDiv = document.createElement("div");
-        launcherDiv.className = "drona-chat-launcher";
-        launcherDiv.id = "dronaChatLauncher";
-        launcherDiv.title = "Chat with Drona AI";
-        launcherDiv.setAttribute("aria-label", "Open Drona AI Chat");
-        launcherDiv.setAttribute("role", "button");
-        launcherDiv.setAttribute("tabindex", "0");
-        // Force iOS Safari to recognize this element as interactive
-        launcherDiv.setAttribute("ontouchstart", "");
-        launcherDiv.innerHTML = `
+        // Create launcher wrapper for Safari 3D stacking context
+        const launcherWrapper = document.createElement("div");
+        launcherWrapper.className = "drona-chat-launcher-wrapper";
+
+        // Create launcher button (native button element for iOS accessibility & click triggers)
+        const launcherBtn = document.createElement("button");
+        launcherBtn.type = "button";
+        launcherBtn.className = "drona-chat-launcher";
+        launcherBtn.id = "dronaChatLauncher";
+        launcherBtn.title = "Chat with Drona AI";
+        launcherBtn.setAttribute("aria-label", "Open Drona AI Chat");
+        launcherBtn.innerHTML = `
             <i class="fas fa-robot"></i>
             <span class="pulse-ring"></span>
         `;
-        document.body.appendChild(launcherDiv);
+        launcherWrapper.appendChild(launcherBtn);
+        document.body.appendChild(launcherWrapper);
+
+        // Create Chat Window wrapper for Safari 3D stacking context
+        const windowWrapper = document.createElement("div");
+        windowWrapper.className = "drona-chat-window-wrapper";
 
         // Create Chat Window
         const windowDiv = document.createElement("div");
@@ -278,7 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button type="button" id="dronaSendBtn" aria-label="Send Message"><i class="fas fa-paper-plane"></i></button>
             </div>
         `;
-        document.body.appendChild(windowDiv);
+        windowWrapper.appendChild(windowDiv);
+        document.body.appendChild(windowWrapper);
     }
 
     function addMessage(sender, text, type = "text") {
