@@ -1,0 +1,903 @@
+/* ============================================
+   DRONACHARYA SECTION - PREMIUM STYLING
+   Elite Owner Training Program Section
+   ============================================ */
+
+/* ============================================
+   DRONACHARYA SECTION CONTAINER
+   ============================================ */
+
+.dronacharya {
+    background: linear-gradient(135deg, var(--color-dark) 0%, #1a1a2e 50%, var(--color-dark-light) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0 !important;
+}
+
+/* Premium Background Elements */
+.dronacharya::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: float 20s ease-in-out infinite;
+}
+
+.dronacharya::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+/* Section Header with Badge */
+.dronacharya-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.header-badge i {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.dronacharya-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    animation: glow-text 3s ease-in-out infinite;
+}
+
+@keyframes glow-text {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
+    }
+}
+
+/* ============================================
+   MAIN DRONACHARYA GRID LAYOUT
+   ============================================ */
+
+.dronacharya-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .dronacharya-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* ============================================
+   OWNER PROFILE SECTION (LEFT)
+   ============================================ */
+
+.owner-profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Owner Photo Container */
+.owner-photo-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid rgba(255, 107, 53, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.owner-photo-container:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2), 
+                0 0 30px rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.5);
+}
+
+.owner-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.owner-photo-container:hover .owner-photo {
+    transform: scale(1.05);
+}
+
+/* Photo Badge */
+.photo-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    z-index: 10;
+}
+
+.badge-label {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Photo Glow Effect */
+.photo-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(circle at 30% 30%, 
+                                rgba(255, 107, 53, 0.1), 
+                                transparent 60%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Owner Bio Card */
+.owner-bio-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(15, 15, 15, 0.6));
+    border: 1px solid rgba(255, 107, 53, 0.15);
+    padding: 2.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s, box-shadow 0.5s, border-color 0.5s;
+}
+
+.owner-bio-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 53, 0.3);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(255, 107, 53, 0.1);
+}
+
+.bio-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.bio-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.credential-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 107, 53, 0.08);
+    border: 1px solid rgba(255, 107, 53, 0.15);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.credential-tag:hover {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateX(5px);
+}
+
+.credential-tag i {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+}
+
+.bio-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.bio-text strong {
+    color: var(--color-accent);
+}
+
+/* Stats Mini Section */
+.stats-mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 107, 53, 0.15);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* ============================================
+   CHAMPION GALLERY SECTION (RIGHT)
+   ============================================ */
+
+.champion-gallery-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.gallery-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    font-weight: 300;
+}
+
+/* Champion Grid - 2x2 Layout */
+.champion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .champion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.champion-card {
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+    backdrop-filter: blur(10px);
+}
+
+.champion-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+.champion-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: rgba(15, 15, 15, 0.8);
+}
+
+.champion-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.champion-card:hover .champion-img {
+    transform: scale(1.1);
+}
+
+.champion-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+                                rgba(255, 107, 53, 0.2), 
+                                rgba(220, 20, 60, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.champion-card:hover .champion-overlay {
+    opacity: 1;
+}
+
+.achievement-badge {
+    background: var(--color-primary);
+    color: var(--color-dark);
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+}
+
+.champion-info {
+    padding: 1.5rem;
+}
+
+.champion-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-text {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+/* ============================================
+   EXCLUSIVE TRAINING CONTAINER
+   ============================================ */
+
+.exclusive-training-container {
+    background: linear-gradient(135deg, 
+                                rgba(26, 26, 26, 0.9), 
+                                rgba(15, 15, 15, 0.8));
+    border: 2px solid rgba(255, 107, 53, 0.2);
+    border-radius: 20px;
+    padding: 3.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.exclusive-training-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.exclusive-training-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+.training-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.training-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.training-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: rgba(255, 107, 53, 0.05);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 0.25);
+    transform: translateX(8px);
+}
+
+.benefit-item i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.benefit-item span {
+    font-weight: 500;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   BOOKING SECTION
+   ============================================ */
+
+.booking-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 2px solid rgba(255, 107, 53, 0.15);
+}
+
+@media (max-width: 1024px) {
+    .booking-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Booking Card */
+.booking-card {
+    background: linear-gradient(135deg, 
+                                rgba(15, 15, 15, 0.9), 
+                                rgba(26, 26, 26, 0.8));
+    border: 2px solid rgba(255, 107, 53, 0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.booking-card:hover {
+    border-color: rgba(255, 107, 53, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 
+                0 0 30px rgba(255, 107, 53, 0.15);
+    transform: translateY(-5px);
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.15);
+}
+
+.booking-header h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.package-price {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    display: block;
+}
+
+.price-period {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+}
+
+/* Form Styles */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 107, 53, 0.2);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(255, 107, 53, 0.08);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.15);
+}
+
+.form-input:hover {
+    border-color: rgba(255, 107, 53, 0.4);
+}
+
+.form-input select,
+.form-input option {
+    background-color: var(--color-dark-light);
+    color: var(--color-text);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Form Disclaimer */
+.form-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 1rem;
+    background: rgba(255, 107, 53, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 107, 53, 0.15);
+}
+
+.form-disclaimer input[type="checkbox"] {
+    margin-top: 0.3rem;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+}
+
+.form-disclaimer label {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Submit Button */
+.booking-submit-btn {
+    padding: 1.1rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.booking-submit-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.booking-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 50px rgba(255, 107, 53, 0.4);
+}
+
+.booking-submit-btn:active {
+    transform: translateY(0);
+}
+
+.booking-submit-btn i {
+    transition: transform 0.3s ease;
+}
+
+.booking-submit-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Alternative CTA */
+.booking-cta-alternative {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 107, 53, 0.15);
+}
+
+.booking-cta-alternative p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.9rem 1.5rem;
+    background: rgba(37, 211, 102, 0.15);
+    border: 2px solid rgba(37, 211, 102, 0.3);
+    color: #25D366;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.whatsapp-btn:hover {
+    background: rgba(37, 211, 102, 0.25);
+    border-color: rgba(37, 211, 102, 0.5);
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-btn i {
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   TRUST INDICATORS
+   ============================================ */
+
+.trust-indicators {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .trust-indicators {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trust-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 107, 53, 0.08);
+    border: 1px solid rgba(255, 107, 53, 0.15);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateY(-5px);
+}
+
+.trust-item i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.trust-item:hover i {
+    transform: scale(1.2);
+}
+
+.trust-item p {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateY(-30px) translateX(20px);
+    }
+    66% {
+        transform: translateY(30px) translateX(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .dronacharya {
+        padding: 4rem 0 !important;
+    }
+
+    .dronacharya-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .dronacharya-grid {
+        gap: 2rem;
+    }
+
+    .owner-photo-container {
+        aspect-ratio: 2 / 3;
+    }
+
+    .training-title {
+        font-size: 1.8rem;
+    }
+
+    .exclusive-training-container {
+        padding: 2rem;
+    }
+
+    .booking-section {
+        border-top: 1px solid rgba(255, 107, 53, 0.1);
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stats-mini {
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dronacharya-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .champion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-indicators {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+
+    .booking-header h4 {
+        font-size: 1.2rem;
+    }
+
+    .price-amount {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,406 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    DRONACHARYA SECTION - VISUAL LAYOUTS                    ║
+║              Premium Owner's Elite Training Program Section                 ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESKTOP LAYOUT (1024px and above)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                     DRONACHARYA - ELITE MASTERY                            │
+│              Master Your Fitness With The Founder's Program                 │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────┬─────────────────────────────────────┐
+│                                    │                                     │
+│        OWNER PROFILE               │    CHAMPION GALLERY (2x2 Grid)     │
+│        (LEFT COLUMN)               │    (RIGHT COLUMN)                   │
+│                                    │                                     │
+│   ┌──────────────────────────┐    │  ┌─────────────────┬─────────────┐  │
+│   │                          │    │  │                 │             │  │
+│   │   OWNER PHOTO            │    │  │  Champion 1     │ Champion 2  │  │
+│   │   (3:4 portrait)         │    │  │  (1:1 square)   │ (1:1 sq)    │  │
+│   │                          │    │  │                 │             │  │
+│   │                          │    │  └─────────────────┴─────────────┘  │
+│   └──────────────────────────┘    │  ┌─────────────────┬─────────────┐  │
+│                                    │  │                 │             │  │
+│   ┌──────────────────────────┐    │  │  Champion 3     │ Champion 4  │  │
+│   │ ABOUT THE OWNER          │    │  │  (1:1 square)   │ (1:1 sq)    │  │
+│   │                          │    │  │                 │             │  │
+│   │ ✓ Certified Trainer      │    │  └─────────────────┴─────────────┘  │
+│   │ ✓ Nutrition Specialist   │    │                                     │
+│   │ ✓ 15+ Years Experience   │    │  Rajesh Kumar      Priya Sharma    │
+│   │                          │    │  6-Month Trans...  Strength Ath...  │
+│   │ [Biography text with     │    │                                     │
+│   │  owner's credentials,    │    │  Arjun Patel       Neha Gupta      │
+│   │  training philosophy,    │    │  18-Month Rest...  Athletic Perf... │
+│   │  and background...]      │    │                                     │
+│   │                          │    │                                     │
+│   │ Philosophy: "True        │    │                                     │
+│   │ strength is built through│    │                                     │
+│   │ discipline..."           │    │                                     │
+│   │                          │    │                                     │
+│   │ 500+ | 15+ | 98%         │    │                                     │
+│   │ Trans | Yrs | Success    │    │                                     │
+│   │                          │    │                                     │
+│   └──────────────────────────┘    │                                     │
+│                                    │                                     │
+└────────────────────────────────────┴─────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│              EXCLUSIVE TRAINING PROGRAM BOOKING SECTION                    │
+│                                                                             │
+│  Book Owner's Training Program                                             │
+│  Limited slots available for serious athletes...                           │
+│                                                                             │
+│  ┌────────────────────────────────────────────────────────────────────┐   │
+│  │ ✓ Personalized Training Plans   ✓ Performance Testing             │   │
+│  │ ✓ Nutrition Coaching             ✓ Recovery Strategies           │   │
+│  │ ✓ Priority Support               ✓ Monthly Progress Reviews      │   │
+│  └────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  ┌──────────────────────────┐          ┌────────────────────────┐         │
+│  │   BOOKING FORM           │          │  TRUST INDICATORS      │         │
+│  │                          │          │                        │         │
+│  │ Premium Training Package │          │ 🏅 Certified &         │         │
+│  │ ₹5,000 /session          │          │    Registered          │         │
+│  │                          │          │                        │         │
+│  │ [Your Name]              │          │ 🛡️  100% Satisfaction   │        │
+│  │ [Email]                  │          │                        │         │
+│  │ [Phone Number]           │          │ 🔒 Private & Secure    │         │
+│  │ [Goal dropdown]          │          │                        │         │
+│  │ [Start Date]             │          └────────────────────────┘         │
+│  │ [Message area...]        │                                             │
+│  │ [✓ Accept Terms]         │                                             │
+│  │                          │                                             │
+│  │ [BOOK YOUR SESSION] →    │                                             │
+│  │ or [WhatsApp Now] →      │                                             │
+│  │                          │                                             │
+│  └──────────────────────────┘                                             │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TABLET LAYOUT (768px - 1023px)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│                   DRONACHARYA - ELITE MASTERY                  │
+│             Master Your Fitness With The Founder               │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                    OWNER PROFILE SECTION                        │
+│                                                                 │
+│   ┌──────────────────────────────────────────────┐             │
+│   │                                              │             │
+│   │    OWNER PHOTO (Full Width)                  │             │
+│   │    (3:4 portrait)                            │             │
+│   │                                              │             │
+│   └──────────────────────────────────────────────┘             │
+│                                                                 │
+│   ┌──────────────────────────────────────────────┐             │
+│   │ ABOUT THE OWNER                              │             │
+│   │ ✓ Certified  ✓ Specialist  ✓ 15+ Years      │             │
+│   │                                              │             │
+│   │ [Biography and philosophy...]                │             │
+│   │                                              │             │
+│   │ 500+ | 15+ | 98%                            │             │
+│   └──────────────────────────────────────────────┘             │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                   CHAMPION GALLERY SECTION                      │
+│                                                                 │
+│   ┌──────────────┬──────────────┐                              │
+│   │ Champion 1   │ Champion 2   │                              │
+│   │ (1:1 square) │ (1:1 square) │                              │
+│   └──────────────┴──────────────┘                              │
+│   Rajesh        Priya                                           │
+│                                                                 │
+│   ┌──────────────┬──────────────┐                              │
+│   │ Champion 3   │ Champion 4   │                              │
+│   │ (1:1 square) │ (1:1 square) │                              │
+│   └──────────────┴──────────────┘                              │
+│   Arjun         Neha                                            │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│              EXCLUSIVE TRAINING BOOKING SECTION                 │
+│                                                                 │
+│  ┌─────────────────────────────────────────────┐              │
+│  │ ✓ Personalized     ✓ Performance            │              │
+│  │ ✓ Nutrition        ✓ Recovery Strategies   │              │
+│  │ ✓ Priority         ✓ Monthly Reviews       │              │
+│  └─────────────────────────────────────────────┘              │
+│                                                                 │
+│  ┌─────────────────────────────────────────────┐              │
+│  │   BOOKING FORM                              │              │
+│  │   ₹5,000 /session                           │              │
+│  │                                              │              │
+│  │   [Your Name]                               │              │
+│  │   [Email]                                    │              │
+│  │   [Phone] [Goal dropdown]                    │              │
+│  │   [Start Date]                              │              │
+│  │   [Message area...]                         │              │
+│  │   [✓ Terms]                                 │              │
+│  │   [BOOK YOUR SESSION]                       │              │
+│  │   [WhatsApp Now]                            │              │
+│  └─────────────────────────────────────────────┘              │
+│                                                                 │
+│  🏅 Certified  🛡️  100% Satisfaction  🔒 Private             │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MOBILE LAYOUT (Under 768px)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌──────────────────────────────────────┐
+│                                      │
+│    DRONACHARYA                       │
+│    ELITE MASTERY                     │
+│    Master Your Fitness...            │
+│                                      │
+└──────────────────────────────────────┘
+
+┌──────────────────────────────────────┐
+│  OWNER PROFILE SECTION               │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │                                │  │
+│  │    OWNER PHOTO                 │  │
+│  │    (Full width)                │  │
+│  │                                │  │
+│  └────────────────────────────────┘  │
+│  [Founder & Head Trainer]            │
+│                                      │
+│  About The Owner                     │
+│  ✓ Certified Fitness Coach           │
+│  ✓ Nutrition Specialist              │
+│  ✓ 15+ Years Experience              │
+│                                      │
+│  [Biography text...]                 │
+│                                      │
+│  500+ | 15+ | 98%                    │
+│                                      │
+└──────────────────────────────────────┘
+
+┌──────────────────────────────────────┐
+│  CHAMPION GALLERY SECTION            │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │    Champion 1 Photo            │  │
+│  │    (Full width)                │  │
+│  └────────────────────────────────┘  │
+│  Rajesh Kumar                        │
+│  6-Month Transformation              │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │    Champion 2 Photo            │  │
+│  │    (Full width)                │  │
+│  └────────────────────────────────┘  │
+│  Priya Sharma                        │
+│  Strength Athlete                    │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │    Champion 3 Photo            │  │
+│  │    (Full width)                │  │
+│  └────────────────────────────────┘  │
+│  Arjun Patel                         │
+│  Health Restoration                  │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │    Champion 4 Photo            │  │
+│  │    (Full width)                │  │
+│  └────────────────────────────────┘  │
+│  Neha Gupta                          │
+│  Athletic Performance                │
+│                                      │
+└──────────────────────────────────────┘
+
+┌──────────────────────────────────────┐
+│  EXCLUSIVE TRAINING BOOKING          │
+│                                      │
+│  Book Owner's Training Program       │
+│  Limited slots available...          │
+│                                      │
+│  ✓ Personalized Training Plans       │
+│  ✓ Nutrition Coaching                │
+│  ✓ Performance Testing               │
+│  ✓ Recovery Strategies               │
+│  ✓ Priority Support                  │
+│  ✓ Monthly Progress Reviews          │
+│                                      │
+│  ┌────────────────────────────────┐  │
+│  │  Premium Training Package      │  │
+│  │  ₹5,000 /session               │  │
+│  │                                │  │
+│  │  [Full Name]                   │  │
+│  │  [Email Address]               │  │
+│  │  [Phone Number]                │  │
+│  │  [Select Your Goal]            │  │
+│  │  [Preferred Start Date]        │  │
+│  │                                │  │
+│  │  [Tell us your background...]  │  │
+│  │                                │  │
+│  │  ✓ Accept terms                │  │
+│  │                                │  │
+│  │  [BOOK YOUR SESSION]           │  │
+│  │                                │  │
+│  │  [WhatsApp Now]                │  │
+│  └────────────────────────────────┘  │
+│                                      │
+│  🏅 Certified                        │
+│  🛡️  100% Satisfaction               │
+│  🔒 Private & Secure                 │
+│                                      │
+└──────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COLOR SCHEME & VISUAL HIERARCHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRIMARY COLORS:
+  🟠 #FF6B35 - Energetic Orange (Primary accent)
+  🔴 #DC143C - Crimson Red (Secondary, gradients)
+  🟡 #FFD60A - Bright Yellow (Text highlights)
+  ⚫ #0F0F0F - Charcoal Black (Background)
+  ⚫ #1A1A1A - Light Charcoal (Cards, containers)
+  ⚪ #FFFFFF - White (Primary text)
+  🟤 #E0E0E0 - Light Gray (Secondary text)
+
+VISUAL HIERARCHY:
+  1. Section Title (Largest, gradient color)
+  2. Subsection Titles (Medium size, accent color)
+  3. Body Text (Regular, light gray)
+  4. Interactive Elements (Orange accents, hover effects)
+  5. Supporting Text (Smaller, muted)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INTERACTIVE ELEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HOVER EFFECTS:
+  • Owner Photo: Lifts up, scales up, glows with orange
+  • Champion Cards: Lift up, scale, glow, reveal badge
+  • Form Inputs: Border color change, background glow
+  • Buttons: Color shift, lift up, shine animation
+  • Trust Badges: Scale animation, color enhance
+
+ANIMATIONS:
+  • Page Load: Elements fade in and slide up
+  • Scroll: Cards animate as they come into view
+  • Form Submit: Button shows spinner, transforms on success
+  • Success Message: Toast slides in from top right
+  • Floating Background: Smooth floating orbs animation
+
+FORM VALIDATION:
+  • Valid Input: Green border, success checkmark
+  • Invalid Input: Red border, error message
+  • Phone Auto-Format: Formats as XXX-XXX-XXXX
+  • Email Check: Real-time validation feedback
+  • Date Picker: Native browser date selector
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RESPONSIVE BREAKPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Desktop Large (1400px+):
+  • 2-column grid with extra padding
+  • Full champion 2x2 grid side-by-side
+
+Desktop (1024px-1399px):
+  • 2-column layout optimized
+  • Full champion 2x2 grid
+  • Standard padding
+
+Tablet (768px-1023px):
+  • Stacked single column
+  • Champion grid still 2x2
+  • Reduced padding
+
+Mobile (480px-767px):
+  • Single column full-width
+  • Champion cards in single column
+  • Touch-optimized buttons
+  • Readable font sizes
+
+Mobile Small (<480px):
+  • Extra compressed layout
+  • Reduced font sizes
+  • Minimal padding
+  • Large touch targets
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FORMS FIELDS & VALIDATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Text Input (Name):
+  Placeholder: "Your Full Name"
+  Validation: Required, minimum 2 characters
+
+Email Input:
+  Placeholder: "Email Address"
+  Validation: Valid email format (user@domain.com)
+
+Phone Input:
+  Placeholder: "Phone Number"
+  Auto-Format: XXX-XXX-XXXX
+  Validation: 10 digits required
+
+Goal Dropdown:
+  Options: Strength Building, Muscle Gain, Weight Loss, Athletic, General
+  Validation: Must select an option
+
+Date Picker:
+  Placeholder: "Preferred Start Date"
+  Validation: Must be future date
+
+Message Textarea:
+  Placeholder: "Tell us about your fitness background and goals..."
+  Validation: Optional (nice to have but not required)
+
+Terms Checkbox:
+  Label: "I agree to the training program terms and privacy policy"
+  Validation: Must be checked to submit
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BUTTON STYLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Book Your Session Button:
+  Style: Orange to Red gradient
+  Icon: Arrow pointing right
+  Hover: Lifts up, glow effect, shine animation
+  Text: "BOOK YOUR SESSION" (uppercase, bold)
+
+WhatsApp Button:
+  Style: Green background with border
+  Icon: WhatsApp icon
+  Hover: Border strengthens, scales
+  Text: "WhatsApp Now"
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This visual guide is reference material. Actual colors and sizes will be
+set by the CSS. All designs are fully responsive and optimized for accessibility.
+
+For implementation details, see: DRONACHARYA_IMPLEMENTATION_CHECKLIST.md
+For detailed specs, see: DRONACHARYA_INTEGRATION_GUIDE.md
