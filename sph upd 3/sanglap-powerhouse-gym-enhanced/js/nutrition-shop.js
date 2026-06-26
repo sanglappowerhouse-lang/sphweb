@@ -328,13 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Bind close logic to empty state shop now button
             const shopNowBtn = document.getElementById('shopNowBtn');
             if (shopNowBtn) {
-                shopNowBtn.addEventListener('click', () => {
-                    closeCartDrawer();
-                    const shopSection = document.getElementById('nutrition-shop');
-                    if (shopSection) {
-                        shopSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
+                shopNowBtn.addEventListener('click', closeCartDrawer);
             }
             return;
         }

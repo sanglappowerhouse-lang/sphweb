@@ -138,6 +138,22 @@ a {
     background-clip: text;
     font-weight: 900;
     letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.gym-tagline {
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-top: 2px;
+    text-transform: uppercase;
 }
 
 .nav-menu {
