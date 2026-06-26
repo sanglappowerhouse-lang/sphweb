@@ -39,17 +39,32 @@
     box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
     z-index: 10001;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Safari iOS stacking context and interactivity fix */
+    -webkit-transform: translate3d(0, 0, 99999px) !important;
+    transform: translate3d(0, 0, 99999px) !important;
+    -webkit-tap-highlight-color: rgba(0, 255, 136, 0.3);
+    touch-action: manipulation;
+    pointer-events: auto !important;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
 }
 
 .drona-chat-launcher.drona-launcher-hidden {
     opacity: 0;
-    pointer-events: none;
+    pointer-events: none !important;
     visibility: hidden;
-    transform: scale(0);
+    -webkit-transform: translate3d(0, 0, 99999px) scale(0) !important;
+    transform: translate3d(0, 0, 99999px) scale(0) !important;
 }
 
 .drona-chat-launcher:hover {
-    transform: scale(1.1) rotate(5deg);
+    -webkit-transform: translate3d(0, 0, 99999px) scale(1.1) rotate(5deg) !important;
+    transform: translate3d(0, 0, 99999px) scale(1.1) rotate(5deg) !important;
     box-shadow: 0 0 25px var(--drona-neon);
     color: #FFFFFF;
     background: var(--drona-neon);
@@ -101,7 +116,8 @@
     font-family: var(--drona-font);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px) scale(0.95);
+    -webkit-transform: translate3d(0, 0, 100000px) translateY(20px) scale(0.95) !important;
+    transform: translate3d(0, 0, 100000px) translateY(20px) scale(0.95) !important;
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -109,7 +125,8 @@
 .drona-chat-window.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    -webkit-transform: translate3d(0, 0, 100000px) translateY(0) scale(1) !important;
+    transform: translate3d(0, 0, 100000px) translateY(0) scale(1) !important;
     pointer-events: auto;
 }
 

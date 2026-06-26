@@ -12,6 +12,10 @@
     position: relative;
     overflow: hidden;
     padding: 6rem 0 !important;
+    /* Explicit display ensures Chrome/Android doesn't collapse section */
+    display: block;
+    width: 100%;
+    min-height: 1px;
 }
 
 /* Premium Background Elements */
@@ -483,7 +487,7 @@
 /* Benefits Grid */
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
     gap: 2rem;
     margin-top: 2.5rem;
 }

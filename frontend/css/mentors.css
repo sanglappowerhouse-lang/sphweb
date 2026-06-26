@@ -1,0 +1,211 @@
+/* ============================================
+   SPH GYM - MEET YOUR MENTORS SECTION
+   ============================================ */
+
+.mentors {
+    background-color: var(--color-dark);
+    background-image: 
+        radial-gradient(circle at 50% 10%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.03) 0%, transparent 45%);
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.mentors::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 107, 53, 0.2) 50%, 
+        transparent);
+}
+
+/* ============================================
+   GRID LAYOUT
+   ============================================ */
+.mentors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .mentors-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ============================================
+   MENTOR CARD UI
+   ============================================ */
+.mentor-card {
+    background: rgba(26, 26, 26, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 3rem 2rem 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.mentor-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mentor-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--color-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+                0 0 30px rgba(255, 107, 53, 0.15);
+}
+
+/* Photo Wrapper */
+.mentor-photo-wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 100%);
+    border: 3px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mentor-card:hover .mentor-photo-wrapper {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 25px rgba(255, 107, 53, 0.3);
+    transform: scale(1.05);
+}
+
+.mentor-photo-placeholder {
+    color: rgba(255, 255, 255, 0.15);
+    transition: color 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor-photo-placeholder svg {
+    width: 60px;
+    height: 60px;
+    fill: currentColor;
+    transition: transform 0.5s ease;
+}
+
+.mentor-card:hover .mentor-photo-placeholder {
+    color: var(--color-primary);
+}
+
+.mentor-card:hover .mentor-photo-placeholder svg {
+    transform: scale(1.08) rotate(3deg);
+}
+
+/* Mentor Details */
+.mentor-info {
+    width: 100%;
+    z-index: 2;
+    margin-bottom: 2rem;
+}
+
+.mentor-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.mentor-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.2rem;
+}
+
+.mentor-fee {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mentor-fee span {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+/* WhatsApp CTA Button */
+.mentor-connect-btn {
+    background-color: #25d366; /* WhatsApp Green */
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    text-decoration: none;
+}
+
+.mentor-connect-btn:hover {
+    background-color: #20ba5a;
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+    transform: translateY(-3px);
+}
+
+.mentor-connect-btn:active {
+    transform: scale(0.97);
+}
+
+.mentor-connect-btn i {
+    font-size: 1.2rem;
+}

@@ -2,10 +2,7 @@
    DRONA AI - CHATBOT FRONTEND ENGINE
    ========================================================================== */
 
-// Automatically fall back to localhost if not hosted, or read from a configuration/environment
-const API_BASE_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-    ? "http://localhost:8000/api"
-    : "https://sph-gym-backend.onrender.com/api"; // Default placeholder to be updated by user
+const API_BASE_URL = "http://localhost:5000/api";
 
 /* ==========================================================================
    DRONA AI - EMAIL NOTIFICATION CONFIGURATION
@@ -31,7 +28,7 @@ const EMAIL_CONFIG = {
     emailjs_template_id: "YOUR_EMAILJS_TEMPLATE_ID_HERE"
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeDronaChatbot() {
     // 1. Inject Chatbot HTML Markup
     injectChatbotHTML();
 
@@ -53,12 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBarFill = document.getElementById("progressBarFill");
 
     // State
-    let currentUser = localStorage.getItem("drona_username") || "";
+    let currentUser = "";
+    try {
+        currentUser = localStorage.getItem("drona_username") || "";
+    } catch (e) {
+        console.warn("localStorage read failed, using session-only state:", e);
+    }
     let activeRoutine = null;
     let selectedDayIndex = 0;
 
     // 3. Setup Open/Close Event Listeners
-    launcher.addEventListener("click", (e) => {
+    function handleLauncherActivation(e) {
         e.stopPropagation();
         chatWindow.classList.toggle("active");
         if (chatWindow.classList.contains("active")) {
@@ -74,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             chatWindow.setAttribute("aria-hidden", "true");
         }
-    });
+    }
+
+    launcher.addEventListener("click", handleLauncherActivation);
 
     closeBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -184,17 +188,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Functions & Implementations
 
     function injectChatbotHTML() {
-        // Create launcher
-        const launcherDiv = document.createElement("div");
-        launcherDiv.className = "drona-chat-launcher";
-        launcherDiv.id = "dronaChatLauncher";
-        launcherDiv.title = "Chat with Drona AI";
-        launcherDiv.setAttribute("aria-label", "Open Drona AI Chat");
-        launcherDiv.innerHTML = `
+        // Create launcher button (native button element for iOS accessibility & click triggers)
+        const launcherBtn = document.createElement("button");
+        launcherBtn.type = "button";
+        launcherBtn.className = "drona-chat-launcher";
+        launcherBtn.id = "dronaChatLauncher";
+        launcherBtn.title = "Chat with Drona AI";
+        launcherBtn.setAttribute("aria-label", "Open Drona AI Chat");
+        launcherBtn.innerHTML = `
             <i class="fas fa-robot"></i>
             <span class="pulse-ring"></span>
         `;
-        document.body.appendChild(launcherDiv);
+        document.body.appendChild(launcherBtn);
 
         // Create Chat Window
         const windowDiv = document.createElement("div");
@@ -331,7 +336,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 if (data.status === "success") {
                     currentUser = data.user.id;
-                    localStorage.setItem("drona_username", currentUser);
+                    try {
+                        localStorage.setItem("drona_username", currentUser);
+                    } catch (e) {
+                        console.warn("localStorage setItem failed:", e);
+                    }
                     loadChatPanel();
                 } else {
                     alert("Error: " + data.error);
@@ -340,7 +349,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => {
                 console.error("Backend offline. Logging in locally:", err);
                 currentUser = usernameInput.toLowerCase().replace(/[^a-z0-9_]/g, "");
-                localStorage.setItem("drona_username", currentUser);
+                try {
+                    localStorage.setItem("drona_username", currentUser);
+                } catch (e) {
+                    console.warn("localStorage setItem failed:", e);
+                }
                 loadChatPanel();
             });
         });
@@ -1029,4 +1042,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         renderAuthPanel();
     }
-});
+}
+
+// Bulletproof initialization that handles race conditions in mobile browsers
+// where DOMContentLoaded might have already fired.
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeDronaChatbot);
+} else {
+    initializeDronaChatbot();
+}
