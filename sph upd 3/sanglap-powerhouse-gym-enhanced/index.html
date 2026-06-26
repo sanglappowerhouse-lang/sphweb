@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/drona-ai.css?v=5.0">
     <link rel="stylesheet" href="css/nutrition-shop.css?v=5.0">
     <link rel="stylesheet" href="css/equipment-shop.css?v=5.0">
-    <link rel="stylesheet" href="css/mentors.css?v=5.0">
+    <link rel="stylesheet" href="css/mentors.css?v=5.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -295,7 +295,7 @@
                 <div class="booking-section">
                     <div class="booking-card">
                         <div class="booking-header">
-                            <h4>Premium Training Package</h4>
+                            <h4>Dronacharya Fitness Package</h4>
                             <p class="package-price">
                                 <span class="price-amount">₹5,000</span>
                                 <span class="price-period">/session</span>
@@ -605,10 +605,29 @@
                 </div>
             </div>
 
+            <!-- Search Bar -->
+            <div class="shop-search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="supplementSearch" placeholder="Search supplements by name...">
+                    <button id="clearSupplementSearch" class="clear-search-btn" style="display: none;" title="Clear Search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
             <!-- Product Grid -->
             <div class="shop-grid-container">
                 <div class="shop-grid" id="shopGrid">
                     <!-- Products will be dynamically populated via JavaScript -->
+                </div>
+                
+                <!-- View More Button -->
+                <div class="view-more-container" id="viewMoreSupplementsContainer" style="display: none;">
+                    <button id="viewMoreSupplements" class="view-more-btn">
+                        <span>View More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -630,10 +649,29 @@
                 </div>
             </div>
 
+            <!-- Search Bar -->
+            <div class="eq-search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="equipmentSearch" placeholder="Search equipment by name...">
+                    <button id="clearEquipmentSearch" class="clear-search-btn" style="display: none;" title="Clear Search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
             <!-- Equipment Grid -->
             <div class="eq-grid-container">
                 <div class="eq-grid" id="eqGrid">
                     <!-- Dynamic Equipment Cards Go Here -->
+                </div>
+                
+                <!-- View More Button -->
+                <div class="eq-view-more-container" id="viewMoreEquipmentContainer" style="display: none;">
+                    <button id="viewMoreEquipment" class="view-more-btn eq-view-more-btn">
+                        <span>View More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
             </div>
         </div>

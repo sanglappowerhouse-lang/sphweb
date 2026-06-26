@@ -166,28 +166,83 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartBody = document.getElementById('cartBody');
     const cartTotalValue = document.getElementById('cartTotalValue');
     const whatsappCheckoutBtn = document.getElementById('whatsappCheckoutBtn');
+    const supplementSearch = document.getElementById('supplementSearch');
+    const clearSupplementSearch = document.getElementById('clearSupplementSearch');
+    const viewMoreSupplementsContainer = document.getElementById('viewMoreSupplementsContainer');
+    const viewMoreSupplementsBtn = document.getElementById('viewMoreSupplements');
+
+    // 4.1 SEARCH & VIEW STATE
+    let searchQuery = '';
+    let showAllSupplements = false;
 
     // 5. SHOP RENDERING FUNCTION
-    function renderShop(filterCategory = 'All') {
+    function renderShop() {
         if (!shopGrid) return;
         
+        // Find active category
+        const activeFilterBtn = document.querySelector('.filter-btn.active');
+        const filterCategory = activeFilterBtn ? activeFilterBtn.getAttribute('data-category') : 'All';
+
         shopGrid.innerHTML = '';
-        const filteredProducts = filterCategory === 'All' 
+        
+        // 1. Filter by category
+        let filteredProducts = filterCategory === 'All' 
             ? PRODUCTS 
             : PRODUCTS.filter(p => p.category.toLowerCase() === filterCategory.toLowerCase());
+
+        // 2. Filter by search query
+        if (searchQuery.trim() !== '') {
+            const query = searchQuery.toLowerCase().trim();
+            filteredProducts = filteredProducts.filter(p => p.name.toLowerCase().includes(query));
+        }
+
+        // Toggle search clear button visibility
+        if (clearSupplementSearch) {
+            clearSupplementSearch.style.display = searchQuery ? 'flex' : 'none';
+        }
 
         if (filteredProducts.length === 0) {
             shopGrid.innerHTML = `
                 <div class="shop-empty-state">
                     <i class="fas fa-search"></i>
                     <h3>No products found</h3>
-                    <p>No products found matching the selected category.</p>
+                    <p>No products found matching your search.</p>
                 </div>
             `;
+            if (viewMoreSupplementsContainer) {
+                viewMoreSupplementsContainer.style.display = 'none';
+            }
             return;
         }
 
-        filteredProducts.forEach(product => {
+        // 3. Handle limit / pagination
+        const itemsLimit = 6;
+        const totalMatchingItems = filteredProducts.length;
+        
+        let itemsToRender = filteredProducts;
+        if (totalMatchingItems > itemsLimit && !showAllSupplements) {
+            itemsToRender = filteredProducts.slice(0, itemsLimit);
+        }
+
+        // Update View More button container visibility and label
+        if (viewMoreSupplementsContainer && viewMoreSupplementsBtn) {
+            if (totalMatchingItems > itemsLimit) {
+                viewMoreSupplementsContainer.style.display = 'flex';
+                if (showAllSupplements) {
+                    viewMoreSupplementsBtn.querySelector('span').textContent = 'View Less';
+                    viewMoreSupplementsBtn.querySelector('i').className = 'fas fa-chevron-up';
+                } else {
+                    viewMoreSupplementsBtn.querySelector('span').textContent = 'View More';
+                    viewMoreSupplementsBtn.querySelector('i').className = 'fas fa-chevron-down';
+                }
+            } else {
+                viewMoreSupplementsContainer.style.display = 'none';
+            }
+        } else if (viewMoreSupplementsContainer) {
+            viewMoreSupplementsContainer.style.display = 'none';
+        }
+
+        itemsToRender.forEach(product => {
             const isAdded = cart.some(item => item.product.id === product.id);
             const card = document.createElement('div');
             card.className = 'product-card section-hidden'; // works with original script intersection observer
@@ -289,9 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
         
         // Re-render shop grid to remove "Added" state if the removed item is visible
-        const activeFilterBtn = document.querySelector('.filter-btn.active');
-        const activeCategory = activeFilterBtn ? activeFilterBtn.getAttribute('data-category') : 'All';
-        renderShop(activeCategory);
+        renderShop();
     }
 
     function saveCart() {
@@ -458,12 +511,41 @@ Please confirm my order and send over the payment details!`;
             // Add active class to clicked
             btn.classList.add('active');
 
-            const category = btn.getAttribute('data-category');
-            renderShop(category);
+            // Reset showAll state on tab filter change
+            showAllSupplements = false;
+            renderShop();
         });
     });
 
+    // 9.1 SEARCH AND CLEAR BINDINGS
+    if (supplementSearch) {
+        supplementSearch.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            showAllSupplements = false; // Reset to collapsed view on typing
+            renderShop();
+        });
+    }
+
+    if (clearSupplementSearch) {
+        clearSupplementSearch.addEventListener('click', () => {
+            if (supplementSearch) {
+                supplementSearch.value = '';
+                searchQuery = '';
+                showAllSupplements = false;
+                renderShop();
+            }
+        });
+    }
+
+    // 9.2 VIEW MORE BUTTON BINDINGS
+    if (viewMoreSupplementsBtn) {
+        viewMoreSupplementsBtn.addEventListener('click', () => {
+            showAllSupplements = !showAllSupplements;
+            renderShop();
+        });
+    }
+
     // 10. INITIALIZE
-    renderShop('All');
+    renderShop();
     updateCartUI();
 });

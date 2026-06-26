@@ -742,3 +742,201 @@ body.cart-open .cart-drawer {
 .whatsapp-checkout-btn i {
     font-size: 1.3rem;
 }
+
+/* ============================================
+   SEARCH BAR STYLING
+   ============================================ */
+.shop-search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    padding: 0 20px;
+    height: 50px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.search-box:focus-within {
+    border-color: var(--shop-accent-neon);
+    box-shadow: 0 0 15px var(--shop-accent-neon-glow);
+}
+
+.search-icon {
+    color: #666;
+    font-size: 1.1rem;
+    margin-right: 12px;
+    transition: color 0.3s ease;
+}
+
+.search-box:focus-within .search-icon {
+    color: var(--shop-accent-neon);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.search-box input::placeholder {
+    color: #777;
+}
+
+.clear-search-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.clear-search-btn:hover {
+    color: #ffffff;
+}
+
+/* ============================================
+   VIEW MORE STYLING
+   ============================================ */
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+.view-more-btn {
+    background: transparent;
+    border: 2px solid var(--shop-accent-neon);
+    color: var(--shop-accent-neon);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.view-more-btn:hover {
+    background: var(--shop-accent-neon);
+    color: #000000;
+    box-shadow: 0 0 15px var(--shop-accent-neon-glow);
+    transform: translateY(-2px);
+}
+
+.view-more-btn:active {
+    transform: translateY(0);
+}
+
+.view-more-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* ============================================
+   PHONE / MOBILE LAYOUT (3 COLUMNS)
+   ============================================ */
+@media (max-width: 767px) {
+    .shop-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+
+    .product-card {
+        border-radius: 8px !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .product-badge {
+        font-size: 0.55rem !important;
+        padding: 2px 4px !important;
+        top: 6px !important;
+        left: 6px !important;
+        display: none; /* badges clutter the tiny mobile card, hiding them looks cleaner */
+    }
+
+    .product-img-wrapper {
+        padding-top: 90% !important;
+    }
+
+    .product-img-placeholder svg {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .product-info {
+        padding: 0.5rem !important;
+        gap: 0.4rem !important;
+    }
+
+    .product-title {
+        font-size: 0.75rem !important;
+        min-height: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .product-price-row {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: auto !important;
+    }
+
+    .product-price {
+        font-size: 0.85rem !important;
+    }
+
+    .add-to-cart-btn {
+        padding: 6px !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        border-width: 1px !important;
+    }
+
+    .add-to-cart-btn span {
+        display: none !important;
+    }
+
+    .add-to-cart-btn i {
+        font-size: 0.75rem !important;
+        margin: 0 !important;
+    }
+}

@@ -209,3 +209,70 @@
 .mentor-connect-btn i {
     font-size: 1.2rem;
 }
+
+/* ============================================
+   PHONE / MOBILE LAYOUT (2 COLUMNS)
+   ============================================ */
+@media (max-width: 767px) {
+    .mentors-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .mentor-card {
+        padding: 1.5rem 0.75rem 1.25rem 0.75rem !important;
+        border-radius: 16px !important;
+    }
+
+    .mentor-photo-wrapper {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+        border-width: 2px !important;
+    }
+
+    .mentor-photo-placeholder svg {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .mentor-info {
+        margin-bottom: 1rem !important;
+    }
+
+    .mentor-name {
+        font-size: 1.1rem !important;
+        font-weight: 800 !important;
+    }
+
+    .mentor-title {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .mentor-fee {
+        font-size: 0.8rem !important;
+        padding: 4px 10px !important;
+    }
+
+    .mentor-fee span {
+        font-size: 0.9rem !important;
+    }
+
+    .mentor-connect-btn {
+        padding: 10px !important;
+        font-size: 0.75rem !important;
+        border-radius: 30px !important;
+    }
+
+    .mentor-connect-btn span {
+        display: none !important;
+    }
+
+    .mentor-connect-btn::after {
+        content: 'WhatsApp' !important;
+        font-weight: 700 !important;
+    }
+}
