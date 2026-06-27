@@ -339,7 +339,19 @@
 
 @media (max-width: 768px) {
     .champion-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    .champion-info {
+        padding: 0.75rem !important;
+    }
+    .champion-name {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .achievement-badge {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.6rem !important;
     }
 }
 
@@ -770,7 +782,21 @@
 
 @media (max-width: 768px) {
     .trust-indicators {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    .trust-item {
+        padding: 0.75rem 0.5rem !important;
+        border-radius: 8px !important;
+    }
+    .trust-item i {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .trust-item p {
+        font-size: 0.65rem !important;
+        line-height: 1.1 !important;
+        font-weight: 600 !important;
     }
 }
 
@@ -851,6 +877,8 @@
 
     .owner-photo-container {
         aspect-ratio: 2 / 3;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .training-title {
@@ -863,9 +891,64 @@
     }
 
     .owner-bio-card,
-    .booking-card,
     .exclusive-training-container {
         padding: 1.5rem 1rem !important;
+    }
+
+    .booking-card {
+        padding: 1.2rem 1rem !important;
+    }
+
+    .booking-header {
+        margin-bottom: 1rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .booking-header h4 {
+        font-size: 1.2rem !important;
+    }
+
+    .price-amount {
+        font-size: 1.8rem !important;
+    }
+
+    .booking-form {
+        gap: 0.8rem !important;
+    }
+
+    .form-input {
+        padding: 0.7rem 0.8rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .booking-form-label {
+        margin-bottom: 0.3rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .booking-selector-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem !important;
+    }
+
+    .selector-card .card-content {
+        min-height: 36px !important;
+        padding: 0.4rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .form-textarea {
+        min-height: 60px !important;
+    }
+
+    .booking-submit-btn {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    .booking-cta-alternative {
+        margin-top: 1rem !important;
+        padding-top: 0.8rem !important;
     }
 
     .bio-text {
@@ -906,9 +989,7 @@
         letter-spacing: 1px;
     }
 
-    .champion-grid {
-        grid-template-columns: 1fr;
-    }
+
 
     .trust-indicators {
         grid-template-columns: 1fr;
@@ -950,12 +1031,7 @@
     margin-bottom: 0.5rem;
 }
 
-@media (max-width: 480px) {
-    .booking-selector-grid {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-}
+
 
 /* Selector Radio Cards */
 .selector-card {
@@ -1075,6 +1151,27 @@
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+/* Photos Row Container */
+.booking-photos-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .booking-photos-row {
+        flex-direction: row !important;
+        gap: 0.75rem !important;
+    }
+    .booking-photos-row .booking-showcase-container {
+        flex: 1 !important;
+        min-width: 0 !important;
+        border-radius: 10px !important;
+        border-width: 1px !important;
+    }
 }
 
 

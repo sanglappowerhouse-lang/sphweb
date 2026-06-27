@@ -67,6 +67,16 @@ function scrollToContact() {
     }
 }
 
+function scrollToMentors() {
+    const mentorsSection = document.querySelector('#mentors');
+    if (mentorsSection) {
+        mentorsSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
 // ============================================
 // NAVBAR BACKGROUND ON SCROLL
 // ============================================

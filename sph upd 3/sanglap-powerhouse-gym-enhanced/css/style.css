@@ -1595,11 +1595,134 @@ section.section-hidden.section-visible {
     }
 
     .floor-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    .floor-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 12px !important;
+        border-width: 1.5px !important;
+    }
+
+    .floor-icon {
+        font-size: 2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .floor-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .floor-type {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .floor-features {
+        margin: 0.75rem 0 !important;
+    }
+
+    .floor-features li {
+        padding: 0.4rem 0 !important;
+        font-size: 0.8rem !important;
+        gap: 0.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .floor-features i {
+        font-size: 0.9rem !important;
+    }
+
+    .policy-notice {
+        padding: 1rem !important;
+        margin-top: 1rem !important;
+        gap: 0.5rem !important;
+    }
+
+    .policy-notice p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+        margin-top: 1.5rem !important;
+    }
+
+    .pricing-grid .pricing-card:nth-child(3) {
+        grid-column: span 2 !important;
+        max-width: 480px !important;
+        justify-self: center !important;
+        width: 100% !important;
+    }
+
+    .pricing-card {
+        border-radius: 12px !important;
+    }
+
+    .pricing-header {
+        padding: 1.25rem 1rem !important;
+    }
+
+    .pricing-header i {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .pricing-header h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .pricing-body {
+        padding: 1.25rem 1rem !important;
+    }
+
+    .price-tier {
+        margin-bottom: 0.75rem !important;
+    }
+
+    .tier-label {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.25rem !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .tier-price {
+        font-size: 1.8rem !important;
+    }
+
+    .tier-period {
+        font-size: 0.85rem !important;
+    }
+
+    .price-divider {
+        margin: 0.75rem 0 !important;
+    }
+
+    .price-features {
+        margin: 0.75rem 0 !important;
+    }
+
+    .price-features li {
+        padding: 0.5rem 0 !important;
+        font-size: 0.8rem !important;
+        gap: 0.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .pricing-btn {
+        padding: 0.75rem !important;
+        margin-top: 1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .addon-note {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .pricing-card.featured {

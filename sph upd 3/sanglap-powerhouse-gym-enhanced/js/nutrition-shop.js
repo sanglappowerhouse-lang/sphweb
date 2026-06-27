@@ -496,7 +496,7 @@ Please confirm my order and send over the payment details!`;
 
             // URL Encode (spaces as %20, line breaks as %0A)
             const encodedMessage = encodeURIComponent(rawMessage);
-            const whatsappUrl = `https://wa.me/916290941903?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/917003659088?text=${encodedMessage}`;
 
             // Redirect user in a new tab
             window.open(whatsappUrl, '_blank');
