@@ -926,3 +926,155 @@
         font-size: 2rem;
     }
 }
+
+/* ============================================
+   INTERACTIVE PRICE CALCULATOR STYLING
+   ============================================ */
+
+/* Form Labels */
+.booking-form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Custom Grid Selectors */
+.booking-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .booking-selector-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+}
+
+/* Selector Radio Cards */
+.selector-card {
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.selector-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.selector-card .card-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(255, 107, 53, 0.15);
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+}
+
+.selector-card:hover .card-content {
+    border-color: rgba(255, 107, 53, 0.4);
+    background: rgba(255, 107, 53, 0.04);
+    color: var(--color-text);
+}
+
+/* Checked State */
+.selector-card input[type="radio"]:checked + .card-content {
+    border-color: var(--color-primary);
+    background: rgba(255, 107, 53, 0.12);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+    font-weight: 700;
+}
+
+/* Disabled State */
+.selector-card input[type="radio"]:disabled + .card-content {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.01);
+    color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
+/* Live Pricing Display Card */
+.pricing-summary-card {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(220, 20, 60, 0.05) 100%);
+    border: 1.5px solid rgba(255, 107, 53, 0.3);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    margin: 0.5rem 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.pricing-summary-card .price-label {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.pricing-summary-card .price-value {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
+
+.pricing-summary-card .price-note {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* Brand Showcase Column and Image */
+.booking-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.booking-showcase-container {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 107, 53, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 107, 53, 0.08);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.booking-showcase-container:hover {
+    border-color: rgba(255, 107, 53, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 107, 53, 0.18);
+    transform: translateY(-5px);
+}
+
+.booking-showcase-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+

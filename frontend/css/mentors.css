@@ -96,6 +96,19 @@
     z-index: 2;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.mentor-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.mentor-card:hover .mentor-photo {
+    transform: scale(1.08);
 }
 
 .mentor-card:hover .mentor-photo-wrapper {

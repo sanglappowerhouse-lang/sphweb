@@ -40,8 +40,8 @@
             <div class="nav-logo">
                 <img src="assets/images/gym-logo.png" alt="Sanglap Power House Gym Logo" class="logo-img">
                 <div class="logo-text">
-                    <span class="gym-name">SPH GYM & FITNESS</span>
-                    <span class="gym-tagline">The Place which brings u close to Fitness and Discipline</span>
+                    <span class="gym-name">SPH GYM FITNESS & NUTRITION</span>
+                    <span class="gym-tagline">One step solution to your fitness goals</span>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -129,8 +129,8 @@
                     <i class="fas fa-crown"></i>
                     <span>ELITE MASTERY</span>
                 </div>
-                <h2 class="section-title dronacharya-title">DRONACHARYA TRAINING CAMP</h2>
-                <p class="section-subtitle">Master Your Fitness With The Founder's Personal Training Program</p>
+                <h2 class="section-title dronacharya-title">DRONACHARYA COACHING CAMP</h2>
+                <p class="section-subtitle">Master Your Fitness With The Dronacharya's Personal Coaching Program</p>
             </div>
 
             <!-- Main Layout: Owner Profile + Champion Gallery -->
@@ -151,11 +151,11 @@
                         <h3 class="bio-title">About The Owner</h3>
                         <div class="bio-credentials">
                             <span class="credential-tag"><i class="fas fa-star"></i> Certified Fitness Coach</span>
-                            <span class="credential-tag"><i class="fas fa-star"></i> Nutrition Specialist</span>
-                            <span class="credential-tag"><i class="fas fa-star"></i> 15+ Years Experience</span>
+                            <span class="credential-tag"><i class="fas fa-star"></i> Trained hundreds of international and National level athletes</span>
+                            <span class="credential-tag"><i class="fas fa-star"></i> 25+ Years Experience</span>
                         </div>
                         <p class="bio-text">
-                            With over 15 years of dedication to fitness excellence, our founder has transformed
+                            With over 25 years of dedication to fitness excellence, our founder has transformed
                             hundreds of lives through personalized training and unwavering commitment. Bringing
                             world-class coaching methodology to Kolkata, our owner combines strength training
                             expertise with sports nutrition knowledge to deliver unparalleled results.
@@ -172,7 +172,7 @@
                                 <span class="stat-label">Transformations</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">15+</span>
+                                <span class="stat-number">25+</span>
                                 <span class="stat-label">Years Experience</span>
                             </div>
                             <div class="stat-item">
@@ -194,7 +194,7 @@
                         <!-- Champion 1 -->
                         <div class="champion-card">
                             <div class="champion-img-wrapper">
-                                <img src="assets/images/Screenshot 2026-06-12 170330.png" alt="Champion Student 1"
+                                <img src="assets/images/anik-ghosh-transformation.jpg" alt="Champion Student 1"
                                     class="champion-img">
                                 <div class="champion-overlay">
                                     <span class="achievement-badge">Transformation Story</span>
@@ -256,9 +256,9 @@
             <!-- Exclusive Training Program Section -->
             <div class="exclusive-training-container">
                 <div class="training-content">
-                    <h3 class="training-title">Book Owner's Training Program</h3>
+                    <h3 class="training-title">Book Dronacharya's Coaching Program</h3>
                     <p class="training-subtitle">
-                        Exclusive 1-on-1 training sessions directly with our founder.
+                        Exclusive 1-on-1 training sessions directly with Dronacharya.
                         Limited slots available for serious athletes and transformation seekers.
                     </p>
 
@@ -268,22 +268,12 @@
                             <i class="fas fa-check-circle"></i>
                             <span>Personalized Training Plans</span>
                         </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Nutrition Coaching</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Performance Testing</span>
-                        </div>
+                    
                         <div class="benefit-item">
                             <i class="fas fa-check-circle"></i>
                             <span>Recovery Strategies</span>
                         </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Priority Support</span>
-                        </div>
+                       
                         <div class="benefit-item">
                             <i class="fas fa-check-circle"></i>
                             <span>Monthly Progress Reviews</span>
@@ -295,44 +285,80 @@
                 <div class="booking-section">
                     <div class="booking-card">
                         <div class="booking-header">
-                            <h4>Premium Training Package</h4>
-                            <p class="package-price">
-                                <span class="price-amount">₹5,000</span>
-                                <span class="price-period">/session</span>
-                            </p>
+                            <h4>Book Now</h4>
+                            
                         </div>
 
                         <form class="booking-form" id="dronacharya-booking-form">
                             <div class="form-group">
-                                <input type="text" placeholder="Your Full Name" class="form-input" required>
+                                <input type="text" id="dbf-name" placeholder="Your Full Name" class="form-input" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" placeholder="Email Address" class="form-input" required>
+                                <input type="tel" id="dbf-phone" placeholder="Phone Number" class="form-input" required>
+                            </div>
+
+                            <!-- Membership Type -->
+                            <div class="form-group">
+                                <label class="booking-form-label">Membership Type</label>
+                                <div class="booking-selector-grid">
+                                    <label class="selector-card">
+                                        <input type="radio" name="membership_type" value="Employee" checked>
+                                        <div class="card-content">
+                                            <span>Employee</span>
+                                        </div>
+                                    </label>
+                                    <label class="selector-card">
+                                        <input type="radio" name="membership_type" value="Student">
+                                        <div class="card-content">
+                                            <span>Student</span>
+                                        </div>
+                                    </label>
+                                    <label class="selector-card">
+                                        <input type="radio" name="membership_type" value="International Athlete">
+                                        <div class="card-content">
+                                            <span>Int'l Athlete</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Plan Type -->
+                            <div class="form-group">
+                                <label class="booking-form-label">Plan Type</label>
+                                <div class="booking-selector-grid">
+                                    <label class="selector-card" id="plan-quarterly-card">
+                                        <input type="radio" name="plan_type" value="Quarterly" checked>
+                                        <div class="card-content">
+                                            <span>Quarterly</span>
+                                        </div>
+                                    </label>
+                                    <label class="selector-card">
+                                        <input type="radio" name="plan_type" value="Half-Yearly">
+                                        <div class="card-content">
+                                            <span>Half-Yearly</span>
+                                        </div>
+                                    </label>
+                                    <label class="selector-card">
+                                        <input type="radio" name="plan_type" value="Annually">
+                                        <div class="card-content">
+                                            <span>Annually</span>
+                                        </div>
+                                    </label>
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <input type="tel" placeholder="Phone Number" class="form-input" required>
-                            </div>
-
-                            <div class="form-group">
-                                <select class="form-input" required>
-                                    <option value="">Select Your Goal</option>
-                                    <option value="strength">Strength Building</option>
-                                    <option value="muscle">Muscle Gain</option>
-                                    <option value="weight-loss">Weight Loss</option>
-                                    <option value="athlete">Athletic Performance</option>
-                                    <option value="general">General Fitness</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="date" placeholder="Preferred Start Date" class="form-input" required>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea placeholder="Tell us about your fitness background and goals..."
+                                <label class="booking-form-label">Fitness Goals</label>
+                                <textarea id="dbf-goals" placeholder="Tell us about your fitness goals..."
                                     class="form-input form-textarea" rows="4"></textarea>
+                            </div>
+
+                            <!-- Live Pricing Summary Card -->
+                            <div class="pricing-summary-card">
+                                <span class="price-label">Calculated Price</span>
+                                <div class="price-value" id="calculated-price">₹10,000</div>
+                                <span class="price-note">Dynamic calculation based on selected plan</span>
                             </div>
 
                             <div class="form-disclaimer">
@@ -347,29 +373,34 @@
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </form>
-
-                        <div class="booking-cta-alternative">
-                            <p>Or contact us directly:</p>
-                            <a href="https://wa.me/916290941903" class="whatsapp-btn" target="_blank">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp Now</span>
-                            </a>
-                        </div>
                     </div>
 
-                    <!-- Trust Indicators -->
-                    <div class="trust-indicators">
-                        <div class="trust-item">
-                            <i class="fas fa-medal"></i>
-                            <p>Certified & Registered</p>
+                    <!-- Right Column: Trust & Photo -->
+                    <div class="booking-right-col">
+                        <!-- Trust Indicators -->
+                        <div class="trust-indicators">
+                            <div class="trust-item">
+                                <i class="fas fa-medal"></i>
+                                <p>Certified & Registered</p>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <p>100% Satisfaction</p>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-lock"></i>
+                                <p>Private & Secure</p>
+                            </div>
                         </div>
-                        <div class="trust-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <p>100% Satisfaction</p>
+
+                        <!-- Brand Showcase Photo -->
+                        <div class="booking-showcase-container">
+                            <img src="assets/images/dronacharya-group.jpg" alt="Dronacharya Coaching Achievement" class="booking-showcase-img">
                         </div>
-                        <div class="trust-item">
-                            <i class="fas fa-lock"></i>
-                            <p>Private & Secure</p>
+
+                        <!-- Brand Showcase Photo 2 -->
+                        <div class="booking-showcase-container">
+                            <img src="assets/images/dronacharya-group-2.jpg" alt="Dronacharya Coach and Champion" class="booking-showcase-img">
                         </div>
                     </div>
                 </div>
@@ -387,19 +418,14 @@
                 <!-- Mentor 1: Amit Biswas -->
                 <div class="mentor-card">
                     <div class="mentor-photo-wrapper">
-                        <div class="mentor-photo-placeholder">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                            </svg>
-                        </div>
+                        <img src="assets/images/amit-biswas.jpeg" alt="Amit Biswas" class="mentor-photo">
                     </div>
                     <div class="mentor-info">
                         <h3 class="mentor-name">Amit Biswas</h3>
                         <p class="mentor-title">Certified Trainer / Mentor</p>
-                        <p class="mentor-fee">Fee: <span>₹2,000</span> / month</p>
+                        <p class="mentor-fee">Fee: <span>₹2,500</span> / month</p>
                     </div>
-                    <a href="https://wa.me/917003296265?text=Hello%20Amit%20Biswas!%20I%20saw%20your%20profile%20on%20the%20SPH%20website%20and%20I%20am%20interested%20in%20joining%20your%20personal%20training%20program.%0A%0AI%20understand%20the%20training%20fee%20is%20%E2%82%B92%2C000.%20Please%20guide%20me%20on%20how%20to%20get%20started!"
+                    <a href="https://wa.me/917003296265?text=Hello%20Amit%20Biswas!%20I%20saw%20your%20profile%20on%20the%20SPH%20website%20and%20I%20am%20interested%20in%20joining%20your%20personal%20training%20program.%0A%0AI%20understand%20the%20training%20fee%20is%20%E2%82%B92%2C500.%20Please%20guide%20me%20on%20how%20to%20get%20started!"
                         target="_blank" class="mentor-connect-btn">
                         <i class="fab fa-whatsapp"></i>
                         <span>Connect via WhatsApp</span>
@@ -409,19 +435,14 @@
                 <!-- Mentor 2: Kunal Sen -->
                 <div class="mentor-card">
                     <div class="mentor-photo-wrapper">
-                        <div class="mentor-photo-placeholder">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                            </svg>
-                        </div>
+                        <img src="assets/images/kunal-sen.jpeg" alt="Kunal Sen" class="mentor-photo">
                     </div>
                     <div class="mentor-info">
                         <h3 class="mentor-name">Kunal Sen</h3>
                         <p class="mentor-title">Certified Trainer / Mentor</p>
-                        <p class="mentor-fee">Fee: <span>₹2,000</span> / month</p>
+                        <p class="mentor-fee">Fee: <span>₹2,500</span> / month</p>
                     </div>
-                    <a href="https://wa.me/919007837043?text=Hello%20Kunal%20Sen!%20I%20saw%20your%20profile%20on%20the%20SPH%20website%20and%20I%20am%20interested%20in%20joining%20your%20personal%20training%20program.%0A%0AI%20understand%20the%20training%20fee%20is%20%E2%82%B92%2C000.%20Please%20guide%20me%20on%20how%20to%20get%20started!"
+                    <a href="https://wa.me/919007837043?text=Hello%20Kunal%20Sen!%20I%20saw%20your%20profile%20on%20the%20SPH%20website%20and%20I%20am%20interested%20in%20joining%20your%20personal%20training%20program.%0A%0AI%20understand%20the%20training%20fee%20is%20%E2%82%B92%2C500.%20Please%20guide%20me%20on%20how%20to%20get%20started!"
                         target="_blank" class="mentor-connect-btn">
                         <i class="fab fa-whatsapp"></i>
                         <span>Connect via WhatsApp</span>
@@ -431,19 +452,14 @@
                 <!-- Mentor 3: Rohit Saha -->
                 <div class="mentor-card">
                     <div class="mentor-photo-wrapper">
-                        <div class="mentor-photo-placeholder">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                            </svg>
-                        </div>
+                        <img src="assets/images/rohit-saha.jpeg" alt="Rohit Saha" class="mentor-photo">
                     </div>
                     <div class="mentor-info">
                         <h3 class="mentor-name">Rohit Saha</h3>
                         <p class="mentor-title">Certified Trainer / Mentor</p>
-                        <p class="mentor-fee">Fee: <span>₹2,000</span> / month</p>
+                        <p class="mentor-fee">Fee: <span>₹2,500</span> / month</p>
                     </div>
-                    <a href="https://wa.me/918961375371?text=Hello%20Rohit%20Saha!%20I%20saw%20your%20profile%20on%20the%20SPH%20website%20and%20I%20am%20interested%20in%20joining%20your%20personal%20training%20program.%0A%0AI%20understand%20the%20training%20fee%20is%20%E2%82%B92%2C000.%20Please%20guide%20me%20on%20how%20to%20get%20started!"
+                    <a href="https://wa.me/918961375371?text=Hello%20Rohit%20Saha!%20I%20saw%20your%20profile%20on%20the%20SPH%20website%20and%20I%20am%20interested%20in%20joining%20your%20personal%20training%20program.%0A%0AI%20understand%20the%20training%20fee%20is%20%E2%82%B92%2C500.%20Please%20guide%20me%20on%20how%20to%20get%20started!"
                         target="_blank" class="mentor-connect-btn">
                         <i class="fab fa-whatsapp"></i>
                         <span>Connect via WhatsApp</span>
@@ -480,11 +496,11 @@
                     <div class="floor-icon">
                         <i class="fas fa-venus"></i>
                     </div>
-                    <h3>1st Floor</h3>
+                    <h3>1st & 2nd Floor</h3>
                     <p class="floor-type">Female Members Only</p>
                     <ul class="floor-features">
                         <li><i class="fas fa-check-circle"></i> Complete Equipment Suite</li>
-                        <li><i class="fas fa-check-circle"></i> Yoga & Flexibility Programs</li>
+                        <li><i class="fas fa-check-circle"></i> Cardio Equipments</li>
                         <li><i class="fas fa-check-circle"></i> Female Professional Trainers</li>
                         <li><i class="fas fa-check-circle"></i> Storage Shelf Facility</li>
                     </ul>
@@ -544,15 +560,15 @@
                     <div class="pricing-body">
                         <div class="price-tier">
                             <p class="tier-label">First Month (Admission + Fee)</p>
-                            <p class="tier-price">₹1600</p>
+                            <p class="tier-price">₹1500</p>
                         </div>
                         <hr class="price-divider">
                         <div class="price-tier">
                             <p class="tier-label">Monthly Renewal (From 2nd Month)</p>
-                            <p class="tier-price">₹600<span class="tier-period">/month</span></p>
+                            <p class="tier-price">₹500<span class="tier-period">/month</span></p>
                         </div>
                         <ul class="price-features">
-                            <li><i class="fas fa-check"></i> Access to 1st Floor</li>
+                            <li><i class="fas fa-check"></i> Access to 1st & 2nd Floor</li>
                             <li><i class="fas fa-check"></i> All Equipment Access</li>
                             <li><i class="fas fa-check"></i> Storage Shelf Facility</li>
 
@@ -570,7 +586,9 @@
                     <div class="pricing-body">
                         <div class="price-tier">
                             <p class="tier-label">Private PT Sessions</p>
-                            <p class="tier-price">₹2000<span class="tier-period">/month</span></p>
+                            <p class="tier-price">₹2000<span class="tier-period">/12 classes</span></p>
+                             <p class="tier-price">₹2500<span class="tier-period">/16 classes</span></p>
+                             <p class="tier-price">₹3000<span class="tier-period">/20 classes</span></p>
                         </div>
                         <hr class="price-divider">
                         <p class="addon-note">(Available for both sections)</p>

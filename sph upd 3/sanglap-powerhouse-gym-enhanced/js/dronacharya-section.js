@@ -21,70 +21,143 @@ function initDronacharya() {
    BOOKING FORM HANDLING
    ============================================ */
 
+const PRICING_MATRIX = {
+    "Employee": {
+        "Quarterly": 10000,
+        "Half-Yearly": 15000,
+        "Annually": 25000
+    },
+    "Student": {
+        "Quarterly": 6000,
+        "Half-Yearly": 10000,
+        "Annually": 18000
+    },
+    "International Athlete": {
+        "Quarterly": null,
+        "Half-Yearly": 25000,
+        "Annually": 35000
+    }
+};
+
 function setupBookingForm() {
     const form = document.getElementById('dronacharya-booking-form');
     
     if (!form) return;
 
+    // Interactive Price Calculator logic
+    const membershipRadios = form.querySelectorAll('input[name="membership_type"]');
+    const planRadios = form.querySelectorAll('input[name="plan_type"]');
+    const quarterlyRadio = form.querySelector('input[name="plan_type"][value="Quarterly"]');
+    const quarterlyCard = document.getElementById('plan-quarterly-card');
+    const priceDisplay = document.getElementById('calculated-price');
+
+    function calculatePrice() {
+        let selectedMembership = "Employee";
+        let selectedPlan = "Quarterly";
+
+        // Find selected membership
+        membershipRadios.forEach(radio => {
+            if (radio.checked) {
+                selectedMembership = radio.value;
+            }
+        });
+
+        // Toggle Quarterly option based on membership type
+        if (selectedMembership === "International Athlete") {
+            if (quarterlyRadio) quarterlyRadio.disabled = true;
+            if (quarterlyCard) quarterlyCard.classList.add('disabled');
+            
+            // If Quarterly was checked, switch to Half-Yearly
+            if (quarterlyRadio && quarterlyRadio.checked) {
+                const halfYearlyRadio = form.querySelector('input[name="plan_type"][value="Half-Yearly"]');
+                if (halfYearlyRadio) {
+                    halfYearlyRadio.checked = true;
+                }
+            }
+        } else {
+            if (quarterlyRadio) quarterlyRadio.disabled = false;
+            if (quarterlyCard) quarterlyCard.classList.remove('disabled');
+        }
+
+        // Find selected plan
+        planRadios.forEach(radio => {
+            if (radio.checked) {
+                selectedPlan = radio.value;
+            }
+        });
+
+        const price = PRICING_MATRIX[selectedMembership][selectedPlan];
+        
+        if (priceDisplay) {
+            if (price !== null && price !== undefined) {
+                priceDisplay.textContent = `₹${price.toLocaleString('en-IN')}`;
+            } else {
+                priceDisplay.textContent = "N/A";
+            }
+        }
+    }
+
+    // Attach event listeners to all radios
+    membershipRadios.forEach(radio => {
+        radio.addEventListener('change', calculatePrice);
+    });
+    planRadios.forEach(radio => {
+        radio.addEventListener('change', calculatePrice);
+    });
+
+    // Run once initially to set values
+    calculatePrice();
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         // Get form data
-        const formData = new FormData(form);
-        const name = form.querySelector('input[placeholder*="Full Name"]').value;
-        const email = form.querySelector('input[type="email"]').value;
-        const phone = form.querySelector('input[type="tel"]').value;
-        const goal = form.querySelector('select').value;
-        const startDate = form.querySelector('input[type="date"]').value;
-        const message = form.querySelector('textarea').value;
+        const name = document.getElementById('dbf-name').value.trim();
+        const phone = document.getElementById('dbf-phone').value.trim();
+        const goals = document.getElementById('dbf-goals').value.trim();
+
+        let selectedMembership = "";
+        membershipRadios.forEach(radio => {
+            if (radio.checked) selectedMembership = radio.value;
+        });
+
+        let selectedPlan = "";
+        planRadios.forEach(radio => {
+            if (radio.checked) selectedPlan = radio.value;
+        });
 
         // Validate form
-        if (!validateBookingForm(name, email, phone, goal, startDate)) {
+        if (!validateBookingForm(name, phone)) {
             return;
         }
 
-        // Show loading state
-        const submitBtn = form.querySelector('.booking-submit-btn');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-        submitBtn.disabled = true;
+        const price = PRICING_MATRIX[selectedMembership][selectedPlan];
+        const formattedPrice = price ? `₹${price.toLocaleString('en-IN')}` : "N/A";
 
-        // Simulate API call (In production, send to backend)
-        setTimeout(() => {
-            processBookingRequest({
-                name,
-                email,
-                phone,
-                goal,
-                startDate,
-                message,
-                timestamp: new Date().toISOString()
-            });
+        // Construct the WhatsApp message
+        let whatsappText = `Hello Dronacharya Fitness Camp, I would like to book a session. Here are my details:\n`;
+        whatsappText += `- Name: ${name}\n`;
+        whatsappText += `- Phone: ${phone}\n`;
+        whatsappText += `- Membership Type: ${selectedMembership}\n`;
+        whatsappText += `- Plan Type: ${selectedPlan}\n`;
+        whatsappText += `- Calculated Price: ${formattedPrice}\n`;
+        whatsappText += `- Fitness Goals: ${goals || "None specified"}`;
 
-            // Reset button
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+        const whatsappUrl = `https://wa.me/916290941903?text=${encodeURIComponent(whatsappText)}`;
 
-            // Show success message
-            showBookingSuccess(form);
+        // Open WhatsApp directly
+        window.open(whatsappUrl, '_blank');
 
-            // Reset form
-            form.reset();
-        }, 1500);
+        // Reset the form and recalculate
+        form.reset();
+        calculatePrice();
     });
 }
 
-function validateBookingForm(name, email, phone, goal, startDate) {
+function validateBookingForm(name, phone) {
     // Name validation
     if (!name || name.trim().length < 2) {
         showErrorMessage('Please enter a valid name');
-        return false;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showErrorMessage('Please enter a valid email address');
         return false;
     }
 
@@ -92,27 +165,6 @@ function validateBookingForm(name, email, phone, goal, startDate) {
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(phone.replace(/[^0-9]/g, ''))) {
         showErrorMessage('Please enter a valid 10-digit phone number');
-        return false;
-    }
-
-    // Goal validation
-    if (!goal) {
-        showErrorMessage('Please select your fitness goal');
-        return false;
-    }
-
-    // Date validation
-    if (!startDate) {
-        showErrorMessage('Please select a preferred start date');
-        return false;
-    }
-
-    const selectedDate = new Date(startDate);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    if (selectedDate < today) {
-        showErrorMessage('Please select a future date');
         return false;
     }
 
@@ -154,7 +206,7 @@ function showBookingSuccess(form) {
             <i class="fas fa-check-circle"></i>
             <h4>Booking Request Submitted!</h4>
             <p>Our team will contact you shortly to confirm your training sessions.</p>
-            <small>Check your email for confirmation details.</small>
+            <small>We will contact you on the phone number provided.</small>
         </div>
     `;
 

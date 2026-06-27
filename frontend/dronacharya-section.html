@@ -79,7 +79,7 @@
                     <!-- Champion 1 -->
                     <div class="champion-card">
                         <div class="champion-img-wrapper">
-                            <img src="assets/images/Screenshot 2026-06-12 170330.png" 
+                            <img src="assets/images/anik-ghosh-transformation.jpg" 
                                  alt="Champion Student 1" 
                                  class="champion-img">
                             <div class="champion-overlay">
@@ -194,54 +194,78 @@
 
                     <form class="booking-form" id="dronacharya-booking-form">
                         <div class="form-group">
-                            <input type="text" 
-                                   placeholder="Your Full Name" 
-                                   class="form-input"
-                                   required>
+                            <input type="text" id="dbf-name" placeholder="Your Full Name" class="form-input" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" 
-                                   placeholder="Email Address" 
-                                   class="form-input"
-                                   required>
+                            <input type="tel" id="dbf-phone" placeholder="Phone Number" class="form-input" required>
+                        </div>
+
+                        <!-- Membership Type -->
+                        <div class="form-group">
+                            <label class="booking-form-label">Membership Type</label>
+                            <div class="booking-selector-grid">
+                                <label class="selector-card">
+                                    <input type="radio" name="membership_type" value="Employee" checked>
+                                    <div class="card-content">
+                                        <span>Employee</span>
+                                    </div>
+                                </label>
+                                <label class="selector-card">
+                                    <input type="radio" name="membership_type" value="Student">
+                                    <div class="card-content">
+                                        <span>Student</span>
+                                    </div>
+                                </label>
+                                <label class="selector-card">
+                                    <input type="radio" name="membership_type" value="International Athlete">
+                                    <div class="card-content">
+                                        <span>Int'l Athlete</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Plan Type -->
+                        <div class="form-group">
+                            <label class="booking-form-label">Plan Type</label>
+                            <div class="booking-selector-grid">
+                                <label class="selector-card" id="plan-quarterly-card">
+                                    <input type="radio" name="plan_type" value="Quarterly" checked>
+                                    <div class="card-content">
+                                        <span>Quarterly</span>
+                                    </div>
+                                </label>
+                                <label class="selector-card">
+                                    <input type="radio" name="plan_type" value="Half-Yearly">
+                                    <div class="card-content">
+                                        <span>Half-Yearly</span>
+                                    </div>
+                                </label>
+                                <label class="selector-card">
+                                    <input type="radio" name="plan_type" value="Annually">
+                                    <div class="card-content">
+                                        <span>Annually</span>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" 
-                                   placeholder="Phone Number" 
-                                   class="form-input"
-                                   required>
+                            <label class="booking-form-label">Fitness Goals</label>
+                            <textarea id="dbf-goals" placeholder="Tell us about your fitness goals..."
+                                class="form-input form-textarea" rows="4"></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <select class="form-input" required>
-                                <option value="">Select Your Goal</option>
-                                <option value="strength">Strength Building</option>
-                                <option value="muscle">Muscle Gain</option>
-                                <option value="weight-loss">Weight Loss</option>
-                                <option value="athlete">Athletic Performance</option>
-                                <option value="general">General Fitness</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="date" 
-                                   placeholder="Preferred Start Date" 
-                                   class="form-input"
-                                   required>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea placeholder="Tell us about your fitness background and goals..." 
-                                      class="form-input form-textarea"
-                                      rows="4"></textarea>
+                        <!-- Live Pricing Summary Card -->
+                        <div class="pricing-summary-card">
+                            <span class="price-label">Calculated Price</span>
+                            <div class="price-value" id="calculated-price">₹10,000</div>
+                            <span class="price-note">Dynamic calculation based on selected plan</span>
                         </div>
 
                         <div class="form-disclaimer">
-                            <input type="checkbox" 
-                                   id="terms-check" 
-                                   required>
+                            <input type="checkbox" id="terms-check" required>
                             <label for="terms-check">
                                 I agree to the training program terms and privacy policy
                             </label>
@@ -252,29 +276,34 @@
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </form>
-
-                    <div class="booking-cta-alternative">
-                        <p>Or contact us directly:</p>
-                        <a href="https://wa.me/916290941903" class="whatsapp-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp Now</span>
-                        </a>
-                    </div>
                 </div>
 
-                <!-- Trust Indicators -->
-                <div class="trust-indicators">
-                    <div class="trust-item">
-                        <i class="fas fa-medal"></i>
-                        <p>Certified & Registered</p>
+                <!-- Right Column: Trust & Photo -->
+                <div class="booking-right-col">
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-medal"></i>
+                            <p>Certified & Registered</p>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>100% Satisfaction</p>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <p>Private & Secure</p>
+                        </div>
                     </div>
-                    <div class="trust-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <p>100% Satisfaction</p>
+
+                    <!-- Brand Showcase Photo -->
+                    <div class="booking-showcase-container">
+                        <img src="assets/images/dronacharya-group.jpg" alt="Dronacharya Coaching Achievement" class="booking-showcase-img">
                     </div>
-                    <div class="trust-item">
-                        <i class="fas fa-lock"></i>
-                        <p>Private & Secure</p>
+
+                    <!-- Brand Showcase Photo 2 -->
+                    <div class="booking-showcase-container">
+                        <img src="assets/images/dronacharya-group-2.jpg" alt="Dronacharya Coach and Champion" class="booking-showcase-img">
                     </div>
                 </div>
             </div>
