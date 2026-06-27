@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="css/style.css?v=5.0">
     <link rel="stylesheet" href="css/dronacharya-section.css?v=5.0">
     <link rel="stylesheet" href="css/drona-ai.css?v=5.0">
-    <link rel="stylesheet" href="css/nutrition-shop.css?v=5.0">
-    <link rel="stylesheet" href="css/equipment-shop.css?v=5.0">
     <link rel="stylesheet" href="css/mentors.css?v=5.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -47,12 +45,12 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#dronacharya" class="nav-link">Dronacharya Training Camp</a></li>
                 <li><a href="#mentors" class="nav-link">Mentors</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#floor-rules" class="nav-link">Floor Rules</a></li>
-                <li><a href="#nutrition-shop" class="nav-link">Nutrition Shop</a></li>
-                <li><a href="#equipment-shop" class="nav-link">Equipment Shop</a></li>
+                <!-- <li><a href="#nutrition-shop" class="nav-link">Nutrition Shop</a></li> -->
+                <!-- <li><a href="#equipment-shop" class="nav-link">Equipment Shop</a></li> -->
                 <li><a href="#contact" class="nav-link">Contact Us</a></li>
             </ul>
             <div class="hamburger">
@@ -112,6 +110,93 @@
                     trainers are here to guide
                     you every step of the way.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Affordable Pricing Plans</h2>
+            <p class="section-subtitle">Choose the Perfect Plan for Your Fitness Goals</p>
+
+            <div class="pricing-grid">
+                <!-- Male Membership -->
+                <div class="pricing-card">
+                    <div class="pricing-header male-header">
+                        <i class="fas fa-mars"></i>
+                        <h3>Male Membership</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-tier">
+                            <p class="tier-label">First Month (Admission + Fee)</p>
+                            <p class="tier-price">₹1500</p>
+                        </div>
+                        <hr class="price-divider">
+                        <div class="price-tier">
+                            <p class="tier-label">Monthly Renewal (From 2nd Month)</p>
+                            <p class="tier-price">₹500<span class="tier-period">/month</span></p>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Access to Ground Floor</li>
+                            <li><i class="fas fa-check"></i> All Equipment Access</li>
+                            <li><i class="fas fa-check"></i> Storage Shelf Facility</li>
+
+                        </ul>
+                        <button class="pricing-btn" onclick="scrollToContact()">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Female Membership -->
+                <div class="pricing-card">
+                    <div class="pricing-header female-header">
+                        <i class="fas fa-venus"></i>
+                        <h3>Female Membership</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-tier">
+                            <p class="tier-label">First Month (Admission + Fee)</p>
+                            <p class="tier-price">₹1500</p>
+                        </div>
+                        <hr class="price-divider">
+                        <div class="price-tier">
+                            <p class="tier-label">Monthly Renewal (From 2nd Month)</p>
+                            <p class="tier-price">₹500<span class="tier-period">/month</span></p>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Access to 1st & 2nd Floor</li>
+                            <li><i class="fas fa-check"></i> All Equipment Access</li>
+                            <li><i class="fas fa-check"></i> Storage Shelf Facility</li>
+
+                        </ul>
+                        <button class="pricing-btn" onclick="scrollToContact()">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Personal Training -->
+                <div class="pricing-card">
+                    <div class="pricing-header pt-header">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Personal Training</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-tier">
+                            <p class="tier-label">Private PT Sessions</p>
+                            <p class="tier-price">₹2000<span class="tier-period">/12 classes</span></p>
+                             <p class="tier-price">₹2500<span class="tier-period">/16 classes</span></p>
+                             <p class="tier-price">₹3000<span class="tier-period">/20 classes</span></p>
+                        </div>
+                        <hr class="price-divider">
+                        <p class="addon-note">(Available for both sections)</p>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> One-on-One Training</li>
+                            <li><i class="fas fa-check"></i> Customized Workout Plans</li>
+                            <li><i class="fas fa-check"></i> Nutrition Guidance</li>
+                            <li><i class="fas fa-check"></i> Progress Tracking</li>
+                        </ul>
+                        <button class="pricing-btn" onclick="scrollToMentors()">Add to Plan</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -535,174 +620,46 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <!-- Also Visit Our Section -->
+    <section class="sph-stores" id="sph-stores">
         <div class="container">
-            <h2 class="section-title">Affordable Pricing Plans</h2>
-            <p class="section-subtitle">Choose the Perfect Plan for Your Fitness Goals</p>
+            <h2 class="section-title">Also Visit Our</h2>
+            <p class="section-subtitle">Explore Our Specialized Fitness & Nutrition Stores</p>
 
-            <div class="pricing-grid">
-                <!-- Male Membership -->
-                <div class="pricing-card">
-                    <div class="pricing-header male-header">
-                        <i class="fas fa-mars"></i>
-                        <h3>Male Membership</h3>
-                    </div>
-                    <div class="pricing-body">
-                        <div class="price-tier">
-                            <p class="tier-label">First Month (Admission + Fee)</p>
-                            <p class="tier-price">₹1500</p>
-                        </div>
-                        <hr class="price-divider">
-                        <div class="price-tier">
-                            <p class="tier-label">Monthly Renewal (From 2nd Month)</p>
-                            <p class="tier-price">₹500<span class="tier-period">/month</span></p>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> Access to Ground Floor</li>
-                            <li><i class="fas fa-check"></i> All Equipment Access</li>
-                            <li><i class="fas fa-check"></i> Storage Shelf Facility</li>
-
-                        </ul>
-                        <button class="pricing-btn" onclick="scrollToContact()">Get Started</button>
-                    </div>
-                </div>
-
-                <!-- Female Membership -->
-                <div class="pricing-card">
-                    <div class="pricing-header female-header">
-                        <i class="fas fa-venus"></i>
-                        <h3>Female Membership</h3>
-                    </div>
-                    <div class="pricing-body">
-                        <div class="price-tier">
-                            <p class="tier-label">First Month (Admission + Fee)</p>
-                            <p class="tier-price">₹1500</p>
-                        </div>
-                        <hr class="price-divider">
-                        <div class="price-tier">
-                            <p class="tier-label">Monthly Renewal (From 2nd Month)</p>
-                            <p class="tier-price">₹500<span class="tier-period">/month</span></p>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> Access to 1st & 2nd Floor</li>
-                            <li><i class="fas fa-check"></i> All Equipment Access</li>
-                            <li><i class="fas fa-check"></i> Storage Shelf Facility</li>
-
-                        </ul>
-                        <button class="pricing-btn" onclick="scrollToContact()">Get Started</button>
-                    </div>
-                </div>
-
-                <!-- Personal Training -->
-                <div class="pricing-card">
-                    <div class="pricing-header pt-header">
+            <div class="stores-grid">
+                <!-- Store 1: SPH Equipment Store -->
+                <div class="store-card equipment-store">
+                    <div class="store-icon">
                         <i class="fas fa-dumbbell"></i>
-                        <h3>Personal Training</h3>
                     </div>
-                    <div class="pricing-body">
-                        <div class="price-tier">
-                            <p class="tier-label">Private PT Sessions</p>
-                            <p class="tier-price">₹2000<span class="tier-period">/12 classes</span></p>
-                             <p class="tier-price">₹2500<span class="tier-period">/16 classes</span></p>
-                             <p class="tier-price">₹3000<span class="tier-period">/20 classes</span></p>
-                        </div>
-                        <hr class="price-divider">
-                        <p class="addon-note">(Available for both sections)</p>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> One-on-One Training</li>
-                            <li><i class="fas fa-check"></i> Customized Workout Plans</li>
-                            <li><i class="fas fa-check"></i> Nutrition Guidance</li>
-                            <li><i class="fas fa-check"></i> Progress Tracking</li>
-                        </ul>
-                        <button class="pricing-btn" onclick="scrollToMentors()">Add to Plan</button>
+                    <h3>SPH Equipment Store</h3>
+                    <p class="store-description">
+                        Your premium destination for commercial & home gym setup. Explore high-quality treadmills, dumbbells, power racks, and fitness accessories designed for elite performance.
+                    </p>
+                    <a href="https://sph-equipment.vercel.app/" target="_blank" class="store-btn">
+                        <span>Shop Equipment</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Store 2: SPH Nutrition Store -->
+                <div class="store-card nutrition-store">
+                    <div class="store-icon">
+                        <i class="fas fa-prescription-bottle-alt"></i>
                     </div>
+                    <h3>SPH Nutrition Store</h3>
+                    <p class="store-description">
+                        Fuel your gains and accelerate recovery with premium supplements. Discover genuine proteins, pre-workouts, vitamins, and personalized nutritional products.
+                    </p>
+                    <a href="https://sph-nutrition.vercel.app/" target="_blank" class="store-btn">
+                        <span>Shop Nutrition</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nutrition Shop Section -->
-    <section class="nutrition-shop" id="nutrition-shop">
-        <div class="container">
-            <h2 class="section-title">Nutrition Shop</h2>
-            <p class="section-subtitle">Fuel Your Performance With Premium Supplements</p>
-
-            <!-- Filter Navigation Bar -->
-            <div class="shop-filter-container">
-                <div class="shop-filter-bar">
-                    <button class="filter-btn active" data-category="All">All Items</button>
-                    <button class="filter-btn" data-category="Protein">Protein</button>
-                    <button class="filter-btn" data-category="Creatine">Creatine</button>
-                    <button class="filter-btn" data-category="Pre-Workout">Pre-Workout</button>
-                    <button class="filter-btn" data-category="Mass Gainer">Mass Gainer</button>
-                    <button class="filter-btn" data-category="Others">Others</button>
-                </div>
-            </div>
-
-            <!-- Product Grid -->
-            <div class="shop-grid-container">
-                <div class="shop-grid" id="shopGrid">
-                    <!-- Products will be dynamically populated via JavaScript -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Equipment Shop Section -->
-    <section class="equipment-shop" id="equipment-shop">
-        <div class="container">
-            <h2 class="section-title">Equipment Shop</h2>
-            <p class="section-subtitle">Premium Gym & Strength Training Equipment</p>
-
-            <!-- Filter Navigation Bar -->
-            <div class="eq-filter-container">
-                <div class="eq-filter-bar">
-                    <button class="eq-filter-btn active" data-category="All">All Series</button>
-                    <button class="eq-filter-btn" data-category="Dronacharya Series">Dronacharya Series</button>
-                    <button class="eq-filter-btn" data-category="SPH Series">SPH Series</button>
-                    <button class="eq-filter-btn" data-category="Imported Series">Imported Series</button>
-                </div>
-            </div>
-
-            <!-- Equipment Grid -->
-            <div class="eq-grid-container">
-                <div class="eq-grid" id="eqGrid">
-                    <!-- Dynamic Equipment Cards Go Here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating Cart Button -->
-    <button class="floating-cart-btn" id="floatingCartBtn" title="View Shopping Cart">
-        <i class="fas fa-shopping-basket"></i>
-        <span class="cart-count-badge" id="cartBadge" style="display: none;">0</span>
-    </button>
-
-    <!-- Cart Side Drawer overlay and content -->
-    <div class="cart-backdrop"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
-            <h2><i class="fas fa-shopping-basket"></i> Your Cart</h2>
-            <button class="cart-close-btn" id="cartCloseBtn" title="Close Cart">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="cart-body" id="cartBody">
-            <!-- Cart items will be dynamically populated via JavaScript -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total-row">
-                <span class="cart-total-label">Total Amount:</span>
-                <span class="cart-total-value" id="cartTotalValue">₹0</span>
-            </div>
-            <button class="whatsapp-checkout-btn" id="whatsappCheckoutBtn">
-                <i class="fab fa-whatsapp"></i>
-                <span>Proceed to Buy via WhatsApp</span>
-            </button>
-        </div>
-    </div>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -779,8 +736,8 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#floor-rules">Floor Rules</a></li>
-                        <li><a href="#nutrition-shop">Nutrition Shop</a></li>
-                        <li><a href="#equipment-shop">Equipment Shop</a></li>
+                        <!-- <li><a href="#nutrition-shop">Nutrition Shop</a></li> -->
+                        <!-- <li><a href="#equipment-shop">Equipment Shop</a></li> -->
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -821,8 +778,6 @@
 
     <script src="js/dronacharya-section.js?v=5.0"></script>
     <script src="js/script.js?v=5.0"></script>
-    <script src="js/nutrition-shop.js?v=5.0"></script>
-    <script src="js/equipment-shop.js?v=5.0"></script>
     <script src="js/drona-ai.js?v=5.0"></script>
 </body>
 
