@@ -29,25 +29,47 @@
    GRID LAYOUT
    ============================================ */
 .mentors-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 24px !important;
+    padding: 1.5rem 1rem 3rem 1rem !important;
     margin-top: 3.5rem;
     position: relative;
     z-index: 2;
+    scrollbar-width: thin !important;
+}
+
+/* Custom scrollbar for desktop/browsers */
+.mentors-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.mentors-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+
+.mentors-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--color-primary), #E5B200);
+    border-radius: 10px;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .mentors-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 24px !important;
+        padding-left: calc(50% - 240px) !important;
+        padding-right: calc(50% - 240px) !important;
     }
 }
 
 @media (min-width: 1024px) {
     .mentors-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        gap: 32px !important;
+        padding-left: calc(50% - 290px) !important;
+        padding-right: calc(50% - 290px) !important;
     }
 }
 
@@ -58,7 +80,7 @@
     background: rgba(26, 26, 26, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: 3rem 2rem 2.5rem 2rem;
+    padding: 3.5rem 3rem 3rem 3rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -70,6 +92,18 @@
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    
+    /* Carousel properties */
+    flex: 0 0 580px;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .mentor-card {
+        flex: 0 0 480px !important;
+        padding: 3rem 2rem 2.5rem 2rem !important;
+    }
 }
 
 .mentor-card::after {
@@ -190,6 +224,102 @@
     font-size: 1.25rem;
 }
 
+/* Mentor Footer Container */
+.mentor-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: auto;
+    z-index: 2;
+}
+
+/* Mentor Transformations Section (2 side-by-side items) */
+.mentor-transformations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin: 1.5rem 0;
+    z-index: 2;
+}
+
+.transformation-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 240px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .transformation-item {
+        height: 200px !important;
+    }
+}
+
+.transformation-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}
+
+.transformation-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transformation-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 75%, transparent 100%);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 6px 4px 4px 4px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.transformation-item.placeholder-item {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 2px dashed rgba(255, 255, 255, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: default !important;
+}
+
+.transformation-item.placeholder-item:hover {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.transformation-placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.transformation-placeholder-content i {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.2);
+}
+
 /* WhatsApp CTA Button */
 .mentor-connect-btn {
     background-color: #25d366; /* WhatsApp Green */
@@ -234,27 +364,54 @@
    PHONE / MOBILE LAYOUT (2 COLUMNS)
    ============================================ */
 @media (max-width: 767px) {
+    /* Horizontal Scroll for Mentor Profiles themselves */
     .mentors-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.75rem !important;
-        margin-top: 2rem !important;
+        display: flex !important;
+        grid-template-columns: none !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-behavior: smooth !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 16px !important;
+        padding: 1rem 16px 2rem 16px !important;
+        margin-top: 1.5rem !important;
+        scrollbar-width: thin !important;
+    }
+
+    /* Style the scrollbar for mentors grid on mobile */
+    .mentors-grid::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .mentors-grid::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 10px;
+    }
+
+    .mentors-grid::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, var(--color-primary), #E5B200);
+        border-radius: 10px;
     }
 
     .mentor-card {
-        padding: 1.5rem 0.75rem 1.25rem 0.75rem !important;
-        border-radius: 16px !important;
+        flex: 0 0 100% !important;
+        scroll-snap-align: center !important;
+        padding: 2rem 1.25rem 1.75rem 1.25rem !important;
+        border-radius: 20px !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+        box-sizing: border-box !important;
     }
 
     .mentor-photo-wrapper {
-        width: 80px !important;
-        height: 80px !important;
-        margin-bottom: 1rem !important;
-        border-width: 2px !important;
+        width: 120px !important;
+        height: 120px !important;
+        margin-bottom: 1.25rem !important;
+        border-width: 3px !important;
     }
 
     .mentor-photo-placeholder svg {
-        width: 36px !important;
-        height: 36px !important;
+        width: 48px !important;
+        height: 48px !important;
     }
 
     .mentor-info {
@@ -262,37 +419,51 @@
     }
 
     .mentor-name {
-        font-size: 1.1rem !important;
+        font-size: 1.45rem !important;
         font-weight: 800 !important;
     }
 
     .mentor-title {
-        font-size: 0.75rem !important;
+        font-size: 0.8rem !important;
         letter-spacing: 0.5px !important;
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .mentor-fee {
-        font-size: 0.8rem !important;
-        padding: 4px 10px !important;
+        font-size: 0.85rem !important;
+        padding: 6px 14px !important;
     }
 
     .mentor-fee span {
-        font-size: 0.9rem !important;
+        font-size: 0.95rem !important;
     }
 
     .mentor-connect-btn {
-        padding: 10px !important;
-        font-size: 0.75rem !important;
-        border-radius: 30px !important;
+        padding: 12px 20px !important;
+        font-size: 0.85rem !important;
+        border-radius: 50px !important;
     }
 
     .mentor-connect-btn span {
-        display: none !important;
+        display: inline !important;
     }
 
     .mentor-connect-btn::after {
-        content: 'WhatsApp' !important;
-        font-weight: 700 !important;
+        content: '' !important;
+    }
+
+    .mentor-footer {
+        gap: 1rem !important;
+        margin-top: auto !important;
+        width: 100% !important;
+    }
+
+    .mentor-transformations {
+        margin: 1.25rem 0 !important;
+        gap: 12px !important;
+    }
+
+    .transformation-item {
+        height: 180px !important;
     }
 }
