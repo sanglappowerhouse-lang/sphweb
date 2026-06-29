@@ -2027,20 +2027,82 @@ section.section-hidden.section-visible {
         padding: 1.5rem;
     }
 
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        margin-top: 1.2rem !important;
+    }
+
+    .pricing-grid .pricing-card:nth-child(3) {
+        grid-column: span 1 !important;
+        max-width: 380px !important;
+    }
+
     .pricing-card {
-        margin-bottom: 1rem;
+        margin: 0 auto 0.8rem auto !important;
+        max-width: 380px !important;
+        width: 100% !important;
+        border-radius: 12px !important;
     }
 
     .pricing-header {
-        padding: 1.5rem;
+        padding: 1rem !important;
+    }
+
+    .pricing-header i {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    .pricing-header h3 {
+        font-size: 1.1rem !important;
     }
 
     .pricing-body {
-        padding: 1.5rem;
+        padding: 1rem !important;
+    }
+
+    .price-tier {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .tier-label {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.2rem !important;
     }
 
     .tier-price {
-        font-size: 2rem;
+        font-size: 1.6rem !important;
+    }
+
+    .tier-period {
+        font-size: 0.8rem !important;
+    }
+
+    .price-divider {
+        margin: 0.5rem 0 !important;
+    }
+
+    .price-features {
+        margin: 0.5rem 0 !important;
+    }
+
+    .price-features li {
+        padding: 0.35rem 0 !important;
+        font-size: 0.75rem !important;
+        gap: 0.4rem !important;
+    }
+
+    .pricing-btn {
+        padding: 0.65rem !important;
+        margin-top: 0.8rem !important;
+        font-size: 0.8rem !important;
+        min-height: 38px !important;
+    }
+
+    .addon-note {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.3rem !important;
     }
 
     .info-card {
