@@ -12,26 +12,45 @@ const body = document.body;
 // MOBILE MENU TOGGLE
 // ============================================
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when a link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+function toggleMobileMenu(forceClose = false) {
+    if (forceClose) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-    });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-container')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    } else {
+        const isActive = hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
     }
-});
+}
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMobileMenu(true);
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar')) {
+            toggleMobileMenu(true);
+        }
+    });
+
+    // Close menu on window resize above mobile/tablet breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+            toggleMobileMenu(true);
+        }
+    });
+}
 
 // ============================================
 // SMOOTH SCROLLING
@@ -331,8 +350,12 @@ window.addEventListener('afterprint', () => {
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        if (typeof toggleMobileMenu === 'function') {
+            toggleMobileMenu(true);
+        } else {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
     }
 });
 

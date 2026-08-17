@@ -378,9 +378,20 @@
         scrollbar-width: thin !important;
     }
 
+@media (max-width: 768px) {
+    .mentors {
+        padding: 2.5rem 0 !important;
+    }
+
     /* Style the scrollbar for mentors grid on mobile */
+    .mentors-grid {
+        gap: 12px !important;
+        padding: 0.5rem 1rem 1.25rem 1rem !important;
+        margin-top: 1rem !important;
+    }
+
     .mentors-grid::-webkit-scrollbar {
-        height: 5px;
+        height: 4px;
     }
 
     .mentors-grid::-webkit-scrollbar-track {
@@ -394,54 +405,56 @@
     }
 
     .mentor-card {
-        flex: 0 0 100% !important;
+        flex: 0 0 280px !important;
         scroll-snap-align: center !important;
-        padding: 2rem 1.25rem 1.75rem 1.25rem !important;
-        border-radius: 20px !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+        padding: 1.2rem 0.85rem 1rem 0.85rem !important;
+        border-radius: 14px !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
         box-sizing: border-box !important;
     }
 
     .mentor-photo-wrapper {
-        width: 120px !important;
-        height: 120px !important;
-        margin-bottom: 1.25rem !important;
-        border-width: 3px !important;
+        width: 75px !important;
+        height: 75px !important;
+        margin-bottom: 0.5rem !important;
+        border-width: 2.5px !important;
     }
 
     .mentor-photo-placeholder svg {
-        width: 48px !important;
-        height: 48px !important;
+        width: 36px !important;
+        height: 36px !important;
     }
 
     .mentor-info {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .mentor-name {
-        font-size: 1.45rem !important;
+        font-size: 1.15rem !important;
         font-weight: 800 !important;
+        margin-bottom: 0.15rem !important;
     }
 
     .mentor-title {
-        font-size: 0.8rem !important;
-        letter-spacing: 0.5px !important;
-        margin-bottom: 0.75rem !important;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.3px !important;
+        margin-bottom: 0.4rem !important;
     }
 
     .mentor-fee {
-        font-size: 0.85rem !important;
-        padding: 6px 14px !important;
+        font-size: 0.75rem !important;
+        padding: 4px 10px !important;
     }
 
     .mentor-fee span {
-        font-size: 0.95rem !important;
+        font-size: 0.85rem !important;
     }
 
     .mentor-connect-btn {
-        padding: 12px 20px !important;
-        font-size: 0.85rem !important;
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
         border-radius: 50px !important;
+        min-height: 36px !important;
     }
 
     .mentor-connect-btn span {
@@ -453,17 +466,20 @@
     }
 
     .mentor-footer {
-        gap: 1rem !important;
+        gap: 0.5rem !important;
         margin-top: auto !important;
         width: 100% !important;
     }
 
     .mentor-transformations {
-        margin: 1.25rem 0 !important;
-        gap: 12px !important;
+        margin: 0.6rem 0 !important;
+        gap: 6px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .transformation-item {
-        height: 180px !important;
+        height: 100px !important;
+        border-radius: 6px !important;
     }
 }
