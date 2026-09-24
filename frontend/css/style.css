@@ -3,25 +3,33 @@
    ============================================ */
 
 /* ============================================
-   CUSTOM FONT - ADISTRO
+   CUSTOM FONT - BOURDEWAY PROFESSIONAL VICTORIAN
    ============================================ */
 @font-face {
-    font-family: 'Adistro';
-    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
-         url('../assets/fonts/Adistro.otf') format('opentype'),
-         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
-         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-family: 'Bourdeway Professional Victorian';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'a Adistro';
-    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
-         url('../assets/fonts/Adistro.otf') format('opentype'),
-         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
-         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-family: 'Bourdeway';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BourdewayRegular';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -112,7 +120,7 @@ h6,
 .footer-contact h4,
 .footer-social h4,
 [class*="-title"] {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     letter-spacing: 1.2px;
 }
 
@@ -184,7 +192,7 @@ a {
 }
 
 .gym-name {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.8rem;
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
@@ -356,7 +364,7 @@ a {
 }
 
 .hero-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 3.8rem;
     font-weight: 800;
     line-height: 1.15;
@@ -527,7 +535,7 @@ section::before {
 }
 
 .section-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
@@ -1206,7 +1214,7 @@ footer {
 }
 
 .footer-brand h3 {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.4rem;
     letter-spacing: 1.2px;
     margin-bottom: 0.5rem;
@@ -1224,7 +1232,7 @@ footer {
 .footer-links h4,
 .footer-contact h4,
 .footer-social h4 {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--color-primary);

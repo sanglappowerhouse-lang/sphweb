@@ -2,24 +2,34 @@
    SPH GYM - MEET YOUR MENTORS SECTION
    ============================================ */
 
-/* Custom Font - Adistro */
+/* ============================================
+   CUSTOM FONT - BOURDEWAY PROFESSIONAL VICTORIAN
+   ============================================ */
 @font-face {
-    font-family: 'Adistro';
-    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
-         url('../assets/fonts/Adistro.otf') format('opentype'),
-         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
-         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-family: 'Bourdeway Professional Victorian';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'a Adistro';
-    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
-         url('../assets/fonts/Adistro.otf') format('opentype'),
-         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
-         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-family: 'Bourdeway';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BourdewayRegular';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -212,7 +222,7 @@
 }
 
 .mentor-name {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     color: #ffffff;
@@ -221,7 +231,7 @@
 }
 
 .mentor-title {
-    font-family: 'Adistro', 'a Adistro', 'Outfit', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Outfit', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-primary);

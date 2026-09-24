@@ -4,25 +4,33 @@
    ============================================ */
 
 /* ============================================
-   CUSTOM FONT - ADISTRO
+   CUSTOM FONT - BOURDEWAY PROFESSIONAL VICTORIAN
    ============================================ */
 @font-face {
-    font-family: 'Adistro';
-    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
-         url('../assets/fonts/Adistro.otf') format('opentype'),
-         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
-         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-family: 'Bourdeway Professional Victorian';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'a Adistro';
-    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
-         url('../assets/fonts/Adistro.otf') format('opentype'),
-         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
-         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-family: 'Bourdeway';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BourdewayRegular';
+    src: url('../assets/fonts/Bourdeway.woff') format('woff'),
+         url('../assets/fonts/BourdewayProfessionalVictorian-3lp7X.otf') format('opentype'),
+         url('../assets/fonts/Bourdeway.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -100,7 +108,7 @@
 }
 
 .dronacharya-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: 2.5px;
@@ -241,7 +249,7 @@
 }
 
 .bio-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1.2px;
@@ -350,7 +358,7 @@
 }
 
 .gallery-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.2px;
@@ -526,7 +534,7 @@
 }
 
 .training-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     color: var(--color-text);
@@ -627,7 +635,7 @@
 }
 
 .booking-header h4 {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -1459,7 +1467,7 @@
 }
 
 .marquee-title {
-    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-family: 'Bourdeway Professional Victorian', 'Bourdeway', 'BourdewayRegular', 'Montserrat', sans-serif;
     font-size: 1.85rem;
     font-weight: 800;
     color: #ffffff;
