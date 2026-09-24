@@ -4,6 +4,29 @@
    Colors: Deep Navy (#0A1F44), Neon Green (#00FF88), White (#FFFFFF)
    ========================================================================== */
 
+/* Custom Font - Adistro */
+@font-face {
+    font-family: 'Adistro';
+    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
+         url('../assets/fonts/Adistro.otf') format('opentype'),
+         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
+         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'a Adistro';
+    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
+         url('../assets/fonts/Adistro.otf') format('opentype'),
+         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
+         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Variables */
 :root {
     --drona-navy: #0A1F44;
@@ -158,10 +181,11 @@
 }
 
 .drona-title {
+    font-family: 'Adistro', 'a Adistro', var(--drona-font);
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.5px;
+    font-size: 17px;
+    letter-spacing: 0.8px;
 }
 
 .drona-status {

@@ -85,9 +85,13 @@ body {
     position: relative;
 }
 
-/* Big Titles Typography */
+/* All Titles & Headings Typography */
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 .hero-title,
 .section-title,
 .dronacharya-title,
@@ -95,18 +99,29 @@ h2,
 .training-title,
 .bio-title,
 .gallery-title,
-.footer-brand h3 {
+.gym-name,
+.mentor-name,
+.mentor-title,
+.plan-name,
+.pricing-header h3,
+.floor-card h3,
+.store-card h3,
+.contact-item h3,
+.footer-brand h3,
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4,
+[class*="-title"] {
     font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
 }
 
-h3,
-h4,
-h5,
-h6,
-.gym-name,
+/* Button & Interactive Typography */
 .cta-button,
-.pricing-btn {
+.pricing-btn,
+.nav-link,
+.btn,
+button {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -169,13 +184,14 @@ a {
 }
 
 .gym-name {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 1.8rem;
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 900;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     line-height: 1.2;
 }
 
@@ -1208,6 +1224,7 @@ footer {
 .footer-links h4,
 .footer-contact h4,
 .footer-social h4 {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--color-primary);
