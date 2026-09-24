@@ -15,6 +15,7 @@ function initDronacharya() {
     setupScrollAnimations();
     setupFormValidation();
     setupSuccessMessage();
+    setupTransformationLightbox();
 }
 
 /* ============================================
@@ -615,6 +616,44 @@ function scrollToDronacharya() {
 
 // Export for use in other scripts
 window.scrollToDronacharya = scrollToDronacharya;
+
+/* ============================================
+   TRANSFORMATION LIGHTBOX MODAL
+   ============================================ */
+function setupTransformationLightbox() {
+    const modal = document.getElementById('transModal');
+    const modalImg = document.getElementById('transModalImg');
+    const closeBtn = document.getElementById('transModalClose');
+    const backdrop = document.getElementById('transModalBackdrop');
+
+    if (!modal || !modalImg) return;
+
+    document.querySelectorAll('.trans-card, .champion-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            if (img && img.src) {
+                modalImg.src = img.src;
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
 
 /* ============================================
    DEBUGGING & TESTING

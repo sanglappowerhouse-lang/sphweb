@@ -2,6 +2,31 @@
    SANGLAP POWER HOUSE GYM - MAIN STYLESHEET
    ============================================ */
 
+/* ============================================
+   CUSTOM FONT - ADISTRO
+   ============================================ */
+@font-face {
+    font-family: 'Adistro';
+    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
+         url('../assets/fonts/Adistro.otf') format('opentype'),
+         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
+         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'a Adistro';
+    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
+         url('../assets/fonts/Adistro.otf') format('opentype'),
+         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
+         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Root Variables */
 :root {
     --color-primary: #FF6B35;
@@ -60,8 +85,21 @@ body {
     position: relative;
 }
 
+/* Big Titles Typography */
 h1,
 h2,
+.hero-title,
+.section-title,
+.dronacharya-title,
+.marquee-title,
+.training-title,
+.bio-title,
+.gallery-title,
+.footer-brand h3 {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    letter-spacing: 1.5px;
+}
+
 h3,
 h4,
 h5,
@@ -365,10 +403,11 @@ a {
 }
 
 .hero-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 3.8rem;
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.15;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
     color: var(--color-text);
 }
@@ -535,13 +574,15 @@ section::before {
 }
 
 .section-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 800;
     text-align: center;
     margin-bottom: 1rem;
     color: var(--color-text);
     position: relative;
     padding-bottom: 1.5rem;
+    letter-spacing: 1.5px;
 }
 
 .section-title::after {
@@ -1257,7 +1298,9 @@ footer {
 }
 
 .footer-brand h3 {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 1.4rem;
+    letter-spacing: 1.2px;
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;

@@ -4,6 +4,31 @@
    ============================================ */
 
 /* ============================================
+   CUSTOM FONT - ADISTRO
+   ============================================ */
+@font-face {
+    font-family: 'Adistro';
+    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
+         url('../assets/fonts/Adistro.otf') format('opentype'),
+         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
+         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'a Adistro';
+    src: url('../assets/fonts/Adistro.ttf') format('truetype'),
+         url('../assets/fonts/Adistro.otf') format('opentype'),
+         url('../assets/fonts/Adistro-YzX68.ttf') format('truetype'),
+         url('../assets/fonts/Adistro-8MePB.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================
    DRONACHARYA SECTION CONTAINER
    ============================================ */
 
@@ -75,9 +100,10 @@
 }
 
 .dronacharya-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 3.5rem;
-    font-weight: 900;
-    letter-spacing: 3px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -102,11 +128,15 @@
 .dronacharya-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3.5rem;
     margin-bottom: 4rem;
     position: relative;
     z-index: 2;
-    align-items: start;
+    align-items: stretch;
+}
+
+.dronacharya-grid > * {
+    min-width: 0;
 }
 
 @media (max-width: 1024px) {
@@ -211,8 +241,10 @@
 }
 
 .bio-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
+    letter-spacing: 1.2px;
     margin-bottom: 1.5rem;
     color: var(--color-text);
 }
@@ -318,8 +350,10 @@
 }
 
 .gallery-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
+    letter-spacing: 1.2px;
     color: var(--color-text);
     margin-bottom: 0.5rem;
 }
@@ -330,17 +364,28 @@
     font-weight: 300;
 }
 
-/* Champion Grid - 2x2 Layout */
+/* Champion Grid - Dynamic Layout */
 .champion-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
+.champion-grid .champion-card:first-child:nth-last-child(3) {
+    grid-column: span 2;
+}
+
+.champion-grid .champion-card:first-child:nth-last-child(3) .champion-img-wrapper {
+    aspect-ratio: 16 / 10;
+}
+
 @media (max-width: 768px) {
     .champion-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
+    }
+    .champion-grid .champion-card:first-child:nth-last-child(3) {
+        grid-column: span 2;
     }
     .champion-info {
         padding: 0.75rem !important;
@@ -481,11 +526,12 @@
 }
 
 .training-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
     font-size: 2.2rem;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--color-text);
     margin-bottom: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .training-subtitle {
@@ -1355,6 +1401,297 @@
         min-width: 0 !important;
         border-radius: 10px !important;
         border-width: 1px !important;
+    }
+}
+
+/* ============================================
+   TRANSFORMATION MARQUEE SECTION
+   Dual-Row Running Animation (Row 1: LTR, Row 2: RTL)
+   ============================================ */
+.transformation-marquee-section {
+    margin: 0;
+    position: relative;
+    padding: 2.25rem 1.25rem;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.75) 0%, rgba(15, 15, 15, 0.9) 100%);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 107, 53, 0.05);
+    backdrop-filter: blur(16px);
+    overflow: hidden;
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.transformation-marquee-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.7), transparent);
+}
+
+.marquee-header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.marquee-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 107, 53, 0.12);
+    border: 1px solid rgba(255, 107, 53, 0.35);
+    color: var(--color-primary, #ff6b35);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.marquee-title {
+    font-family: 'Adistro', 'a Adistro', 'Montserrat', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.marquee-title span {
+    background: linear-gradient(135deg, #ff6b35, #ff9e3b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.marquee-subtitle {
+    font-size: 1rem;
+    color: #a5a5a5;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.marquee-rows-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.marquee-row-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0.5rem 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marquee-row-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    will-change: transform;
+}
+
+/* Row 1: Left-to-Right Running Animation */
+.track-ltr {
+    animation: marqueeScrollLTR 52s linear infinite;
+}
+
+/* Row 2: Right-to-Left Running Animation */
+.track-rtl {
+    animation: marqueeScrollRTL 52s linear infinite;
+}
+
+@keyframes marqueeScrollLTR {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes marqueeScrollRTL {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-group {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.trans-card {
+    position: relative;
+    width: 180px;
+    height: 225px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+}
+
+.trans-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    border-color: rgba(255, 107, 53, 0.7);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 107, 53, 0.3);
+    z-index: 10;
+}
+
+.trans-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.trans-card:hover .trans-img {
+    transform: scale(1.08);
+}
+
+.trans-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.9rem;
+}
+
+.trans-card:hover .trans-overlay {
+    opacity: 1;
+}
+
+.trans-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b35, #ff4500);
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(255, 107, 53, 0.4);
+}
+
+/* Lightbox Modal */
+.trans-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.trans-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.trans-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+}
+
+.trans-modal-content {
+    position: relative;
+    z-index: 10;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.92);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.trans-modal.active .trans-modal-content {
+    transform: scale(1);
+}
+
+.trans-modal-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 107, 53, 0.3);
+    border: 1px solid rgba(255, 107, 53, 0.4);
+}
+
+.trans-modal-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: rgba(255, 107, 53, 0.85);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.trans-modal-close:hover {
+    background: #ff4500;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .transformation-marquee-section {
+        padding: 2rem 0.8rem;
+        margin: 3rem 0 2.5rem 0;
+    }
+    .marquee-title {
+        font-size: 1.6rem;
+    }
+    .trans-card {
+        width: 160px;
+        height: 190px;
+    }
+    .track-ltr, .track-rtl {
+        animation-duration: 38s;
     }
 }
 
